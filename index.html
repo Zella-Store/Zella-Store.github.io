@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Upload to Q-Store</title>
+    <title>Download Zella Store</title>
     <style type="text/css">
 /* BASIC */
 
@@ -276,30 +276,33 @@ input[type=text]:placeholder {
     <div class="wrapper fadeInDown">
       <div id="formContent">
         <!-- Tabs Titles -->
-        <h2 class="active">Upload</h2>
-        <h2 class="inactive underlineHover">Update</h2>
-        <h2 class="inactive underlineHover">Remove</h2>
-        <h2 class="inactive underlineHover">How to</h2>
+        <h2 class="active">Preview</h2>
+        <h2 class="inactive underlineHover">Release</h2>
     
         <!-- Icon -->
         <div class="fadeIn first">
-          <img src="/../ModernQ-Store.png" id="icon" alt="User Icon" style="height:64px;width:64px;"/>
+          <img src="/ZellaStore.png" id="icon" alt="User Icon" />
         </div>
     
-        <!-- Q-Store -->
+        <!-- Zella Store -->
         <div style="margin:6px;">
-          <a>Manage your application</a>
-          <input type="text" id="appidbx" class="fadeIn third" name="appidbx" placeholder="App id">
-          <input type="text" id="accesstokenbx" class="fadeIn third" name="accesstokenbx" placeholder="Access token">
-          <input type="text" id="pullreasonbx" class="fadeIn third" name="a12" placeholder="Reason">
-          <input type="text" id="pullreasonbx" class="fadeIn third" name="b12" placeholder="Known bug">
-          <input type="text" id="pullreasonbx" class="fadeIn third" name="c12" placeholder="New description">
-          <input type="text" id="pullreasonbx" class="fadeIn third" name="d12" placeholder="reason">
+          <a>Zella Store Preview</a>
+        </div>
+    
+        <!-- Download -->
+        <div>
+          <a class="dwndBtn fadeIn fourth" href="https://zella-store.github.io/zellaStore.appxbundle" download="Zella Store.appxbundle">Download Zella</a>
+        </div>
+    
+        <!-- Placeholder Warning -->
+        <div style="margin:6px;">
+          <a style="color:red;">Do not click on download</a><br/>
+          <a style="color:red;">Download is for testing only it will not download store!</a>
         </div>
     
         <!-- Upload -->
         <div id="formFooter">
-          <a class="underlineHover" href="/upload/">Submit App</a>
+          <a class="underlineHover" href="/upload/">Upload your app!</a>
         </div>
     
       </div>
