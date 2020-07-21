@@ -296,7 +296,7 @@ function initializeClock(id, endtime) {
     clock.innerHTML = 'Preview is in ' + t.days + ' days and ' +
                       t.hours + ':' +
                       t.minutes + ':' +
-                      t.seconds + 'up!';
+                      t.seconds + ' up!';
     if (t.total <= 0) {
       clearInterval(timeinterval);
       clockdiv.outerHTML = '<a class="dwndBtn fadeIn fourth" href="https://zella-store.github.io/zellaStore.appxbundle" download="Zella Store.appxbundle">Download</a>';
