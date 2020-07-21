@@ -272,7 +272,7 @@ input[type=text]:placeholder {
 }
     </style>
     <script>
-      const deadline = 'July 24 2020 12:00:00 GMT+0100';
+      const deadline = 'July 21 2020 16:17:00 GMT+0100';
 function getTimeRemaining(endtime){
   const total = Date.parse(endtime) - Date.parse(new Date());
   const seconds = Math.floor( (total/1000) % 60 );
@@ -299,6 +299,7 @@ function initializeClock(id, endtime) {
                       t.seconds;
     if (t.total <= 0) {
       clearInterval(timeinterval);
+      clockdiv.outerHTML = '<a class="dwndBtn fadeIn fourth" href="https://zella-store.github.io/zellaStore.appxbundle" download="Zella Store.appxbundle">Download</a>';
     }
   },1000);
 }
