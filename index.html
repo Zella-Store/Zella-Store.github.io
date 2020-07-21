@@ -293,10 +293,10 @@ function initializeClock(id, endtime) {
   const clock = document.getElementById(id);
   const timeinterval = setInterval(() => {
     const t = getTimeRemaining(endtime);
-    clock.innerHTML = 'days: ' + t.days + '<br>' +
-                      'hours: '+ t.hours + '<br>' +
-                      'minutes: ' + t.minutes + '<br>' +
-                      'seconds: ' + t.seconds;
+    clock.innerHTML = 'days: ' + t.days + ' ' +
+                      t.hours + ':' +
+                      t.minutes + ':' +
+                      t.seconds;
     if (t.total <= 0) {
       clearInterval(timeinterval);
     }
@@ -323,8 +323,8 @@ initializeClock('clockdiv', deadline);
           <a>Zella Store Preview</a>
         </div>
     
-        <div>
-          <a id="clockdiv" class="dwndBtn fadeIn fourth"></a>
+        <div id="clockdiv" class="dwndBtn fadeIn fourth">
+          
         </div>
       
         <!-- Download Template
