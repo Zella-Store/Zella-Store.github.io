@@ -271,6 +271,40 @@ input[type=text]:placeholder {
   box-sizing: border-box;
 }
     </style>
+    <script>
+      const deadline = 'July 24 2020 12:00:00 GMT+0100';
+function getTimeRemaining(endtime){
+  const total = Date.parse(endtime) - Date.parse(new Date());
+  const seconds = Math.floor( (total/1000) % 60 );
+  const minutes = Math.floor( (total/1000/60) % 60 );
+  const hours = Math.floor( (total/(1000*60*60)) % 24 );
+  const days = Math.floor( total/(1000*60*60*24) );
+
+  return {
+    total,
+    days,
+    hours,
+    minutes,
+    seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  const clock = document.getElementById(id);
+  const timeinterval = setInterval(() => {
+    const t = getTimeRemaining(endtime);
+    clock.innerHTML = 'days: ' + t.days + '<br>' +
+                      'hours: '+ t.hours + '<br>' +
+                      'minutes: ' + t.minutes + '<br>' +
+                      'seconds: ' + t.seconds;
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  },1000);
+}
+
+initializeClock('clockdiv', deadline);
+    </script>
   </head>
   <body>
     <div class="wrapper fadeInDown">
@@ -289,6 +323,10 @@ input[type=text]:placeholder {
           <a>Zella Store Preview</a>
         </div>
     
+        <div>
+          <a id="clickdiv" class="dwndBtn fadeIn fourth"></a>
+        </div>
+      
         <!-- Download Template
         <div>
           <a class="dwndBtn fadeIn fourth" href="https://zella-store.github.io/zellaStore.appxbundle" download="Zella Store.appxbundle">Download Zella</a>
