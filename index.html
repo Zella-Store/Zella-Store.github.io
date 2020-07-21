@@ -293,10 +293,10 @@ function initializeClock(id, endtime) {
   const clock = document.getElementById(id);
   const timeinterval = setInterval(() => {
     const t = getTimeRemaining(endtime);
-    clock.innerHTML = 'Preview in ' + t.days + ' days and ' +
+    clock.innerHTML = 'Preview is in ' + t.days + ' days and ' +
                       t.hours + ':' +
                       t.minutes + ':' +
-                      t.seconds;
+                      t.seconds + 'up!';
     if (t.total <= 0) {
       clearInterval(timeinterval);
       clockdiv.outerHTML = '<a class="dwndBtn fadeIn fourth" href="https://zella-store.github.io/zellaStore.appxbundle" download="Zella Store.appxbundle">Download</a>';
@@ -326,7 +326,7 @@ window.addEventListener('load', function () {
         </div>
     
         <div id="clockdiv" class="dwndBtn fadeIn fourth">
-          Preview in - days and --:--:--
+          Preview is in - days and --:--:-- up
         </div>
       
         <!-- Placeholder Warning -->
@@ -336,7 +336,7 @@ window.addEventListener('load', function () {
     
         <!-- Upload -->
         <div id="formFooter">
-          <a class="underlineHover" href="/upload/">Upload your app!</a>
+          <a class="underlineHover" href="/upload/">Upload your own app!</a>
         </div>
     
       </div>
