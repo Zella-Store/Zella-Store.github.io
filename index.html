@@ -293,7 +293,7 @@ function initializeClock(id, endtime) {
   const clock = document.getElementById(id);
   const timeinterval = setInterval(() => {
     const t = getTimeRemaining(endtime);
-    clock.innerHTML = 'Preview in ' + t.days + ' days and' +
+    clock.innerHTML = 'Preview in ' + t.days + ' days and ' +
                       t.hours + ':' +
                       t.minutes + ':' +
                       t.seconds;
