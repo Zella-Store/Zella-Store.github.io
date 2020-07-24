@@ -1,5 +1,5 @@
 [zellaStore appmatrix v0.1]
-title=              Microsoft Desktop App Installer                               //application title
+title=              App Installer                                                 //application title
 author=             Microsoft Corporation                                         //author
 price=              0.00                                                          //price
 publiclyVisible=    true                                                          //public
