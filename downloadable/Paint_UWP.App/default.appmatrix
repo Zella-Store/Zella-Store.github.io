@@ -1,0 +1,23 @@
+[zellaStore appmatrix v0.1]
+title=              Zella Paint UWP                                               //application title
+author=             ZellaSoft 2020                                                //author
+price=              0.00                                                          //price
+publiclyVisible=    false                                                         //public
+containsAd=         false                                                         //contains ads
+inAppPurchase=      false                                                         //contains in-app purchase
+minOSversion=       10.0.15063.0                                                  //minimum OS build
+maxFeatureSet=      10.0.15063.0                                                  //max tested on OS build
+hasLumiaOptima=     no                                                            //no if not
+categoryTags=       paint, draw, imageeditor, photoeditor, app, uwp, continuum    //required to categorize apps
+tilePNG=            StoreTile.png                                                 //app start menu tile
+coverPNG=                                                                         //app (2:3) cover
+discCoverPNG=                                                                     //app (disc) cover
+[Dependencies]
+Microsoft.NET.Native.Framework.1.7.appx
+Microsoft.NET.Native.Runtime.1.7.appx
+Microsoft.VCLibs.ARM.14.00.appx
+[Packages]
+RETAIL=Paint_UWP_RETAIL.appxbundle?1.1.0.0
+PREVIEW=Paint_UWP_PREVIEW.appxbundle?1.1.1.0
+BETA=Paint_UWP_BETA.appxbundle?1.1.3.0
+ALPHA=Paint_UWP_ALPHA.appxbundle?1.2.0.0
