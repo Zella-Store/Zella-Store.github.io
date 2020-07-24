@@ -1,5 +1,5 @@
 [zellaStore appmatrix v0.1]
-title=              Microsoft                                                     //application title
+title=              Microsoft Desktop App Installer                               //application title
 author=             Microsoft Corporation                                         //author
 price=              0.00                                                          //price
 publiclyVisible=    true                                                          //public
@@ -16,6 +16,6 @@ backgroundPNG=                                                                  
 [Dependencies]
 Microsoft.VCLibs.140.00.UWPDesktop_14.0.27810.0_arm__8wekyb3d8bbwe.appx
 Microsoft.VCLibs.140.00.UWPDesktop_14.0.29016.0_arm__8wekyb3d8bbwe.appx
-Microsoft.VCLibs.140.00_14.0.27810.0_arm__8wekyb3d8bbwe
+Microsoft.VCLibs.140.00_14.0.27810.0_arm__8wekyb3d8bbwe.appx
 [Packages]
 RETAIL=Microsoft.DesktopAppInstaller_2019.1019.1.0_neutral_~_8wekyb3d8bbwe.appxbundle?2019.1019.1.0
