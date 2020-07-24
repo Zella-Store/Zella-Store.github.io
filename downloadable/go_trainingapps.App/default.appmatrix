@@ -1,0 +1,17 @@
+[zellaStore appmatrix v0.1]
+title=              Go!              //application title
+author=             TrainingApps                  //author
+price=              12.34                             //price
+publiclyVisible=    false                           //public
+containsAd=         false                           //contains ads
+inAppPurchase=      false                           //contains in-app purchase
+minOSversion=       10.0.10240.0                    //minimum OS build
+maxFeatureSet=      10.0.10240.0                    //max tested on OS build
+hasLumiaOptima=     no                              //no if not
+categoryTags=       app, uwp, continuum      //required to categorize apps
+tilePNG=            StoreTile.png                   //app start menu tile
+coverPNG=           StoreCover.png                  //app (2:3) cover
+//discCoverPNG=       StoreDiscCover.png              //app (disc) cover
+[Dependencies]
+[Packages]
+Go_TrainingApps_RETAIL.appxbundle
