@@ -1,0 +1,21 @@
+[zellaStore appmatrix v0.1]
+title=              Microsoft                                                     //application title
+author=             Microsoft Corporation                                         //author
+price=              0.00                                                          //price
+publiclyVisible=    true                                                          //public
+containsAd=         false                                                         //contains ads
+inAppPurchase=      false                                                         //contains in-app purchase
+minOSversion=       10.0.14393.0                                                  //minimum OS build
+maxFeatureSet=      10.0.14393.0                                                  //max tested on OS build
+hasLumiaOptima=     no                                                            //no if not
+categoryTags=       tool, uwp, installer                                          //required to categorize apps
+tilePNG=            StoreTile.png                                                 //app start menu tile
+coverPNG=                                                                         //app (2:3) cover
+discCoverPNG=                                                                     //app (disc) cover
+backgroundPNG=                                                                    //store background
+[Dependencies]
+Microsoft.VCLibs.140.00.UWPDesktop_14.0.27810.0_arm__8wekyb3d8bbwe.appx
+Microsoft.VCLibs.140.00.UWPDesktop_14.0.29016.0_arm__8wekyb3d8bbwe.appx
+Microsoft.VCLibs.140.00_14.0.27810.0_arm__8wekyb3d8bbwe
+[Packages]
+RETAIL=Microsoft.DesktopAppInstaller_2019.1019.1.0_neutral_~_8wekyb3d8bbwe.appxbundle?2019.1019.1.0
