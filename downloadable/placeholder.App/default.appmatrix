@@ -1,0 +1,17 @@
+[zellaStore appmatrix v0.1]
+title=              Placeholder                     //application title
+author=             Placeholder                     //author
+price=              -9999.99                        //price
+publiclyVisible=    false                           //public
+containsAd=         false                           //contains ads
+inAppPurchase=      false                           //contains in-app purchase
+minOSversion=       0                               //minimum OS build
+maxFeatureSet=      0                               //max tested on OS build
+hasLumiaOptima=     no                              //no if not
+categoryTags=       placeholder                     //required to categorize apps
+tilePNG=            StoreTile.png                   //app start menu tile
+coverPNG=                                           //app (2:3) cover
+discCoverPNG=                                       //app (disc) cover
+[Dependencies]
+[Packages]
+RETAIL=placeholder.appxbundle?0.0.0.0
