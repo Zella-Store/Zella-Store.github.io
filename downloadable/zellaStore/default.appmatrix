@@ -13,6 +13,9 @@ tilePNG=            StoreTile.png                   //app start menu tile
 coverPNG=                                           //app (2:3) cover
 discCoverPNG=                                       //app (disc) cover
 [Dependencies]
+Microsoft.NET.Native.Framework.1.7.appx
+Microsoft.NET.Native.Runtime.1.7.appx
+Microsoft.VCLibs.ARM.14.00.appx
 [Packages]
 RETAIL=ZellaStore_RETAIL.appxbundle?1.1.0.0
 PREVIEW=ZellaStore_PREVIEW.appxbundle?1.1.1.0
