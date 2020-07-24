@@ -1,5 +1,6 @@
 [v0.1]
-downloadable/zellaStore/AppDetails.matrixmap
-downloadable/placeholder.App/AppDetails.matrixmap
-downloadable/Notepad_UWP.App/AppDetails.matrixmap
-downloadable/Paint_UWP.App/AppDetails.matrixmap
+downloadable/Go_TrainingApps.App/default.appmatrix
+downloadable/zellaStore/default.appmatrix
+downloadable/placeholder.App/default.appmatrix
+downloadable/Notepad_UWP.App/default.appmatrix
+downloadable/Paint_UWP.App/default.appmatrix
