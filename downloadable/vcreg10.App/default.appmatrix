@@ -1,0 +1,21 @@
+[zellaStore appmatrix v0.1]
+title=              vcreg10                                                       //application title
+author=             m                                                             //author
+price=              0.00                                                          //price
+security=           threat                                                        //security
+publiclyVisible=    true                                                          //public
+containsAd=         false                                                         //contains ads
+inAppPurchase=      false                                                         //contains in-app purchase
+minOSversion=       10.0.10240.0                                                  //minimum OS build
+maxFeatureSet=      10.0.10586.0                                                  //max tested on OS build
+hasLumiaOptima=     no                                                            //no if not
+categoryTags=       tool, wp, interop, provider, registry                         //required to categorize apps
+tilePNG=            StoreTile.png                                                 //app start menu tile
+coverPNG=                                                                         //app (2:3) cover
+discCoverPNG=                                                                     //app (disc) cover
+backgroundPNG=                                                                    //store background
+[Dependencies]
+Microsoft.NET.CoreRuntime.1.0.appx
+Microsoft.VCLibs.ARM.Debug.14.00.appx
+[Packages]
+RETAIL=vcreg10_1.7.0.0_arm_Debug.appxbundle?1.7.0.0
