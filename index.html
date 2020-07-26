@@ -272,7 +272,7 @@ input[type=text]:placeholder {
 }
     </style>
     <script>
-      var deadline = 'July 27 2020 11:00:00 GMT+0100';
+      var deadline = 'July 28 2020 12:00:00 GMT+0100';
 function getTimeRemaining(endtime){
   const total = Date.parse(endtime) - Date.parse(new Date());
   const seconds = Math.floor( (total/1000) % 60 );
@@ -313,6 +313,7 @@ window.addEventListener('load', function () {
     <div class="wrapper fadeInDown">
       <div id="formContent">
         <!-- Tabs Titles -->
+        <h2 class="inactive underlineHover">Beta</h2>
         <h2 class="active">Preview</h2>
         <h2 class="inactive underlineHover">Release</h2>
     
@@ -330,8 +331,6 @@ window.addEventListener('load', function () {
           Preview is in - days and --:--:-- up
         </div>
         
-        <a class="dwndBtn fadeIn fourth" href="https://Zella-Store.github.io/Rick_Astley_Never_Gonna_Give_You_Up.mp4">I want it NOW !!!</a>
-      
         <!-- Placeholder Warning -->
         <div style="margin:6px;">
           <a style="color:red;">Download date may change while development</a>
