@@ -2,6 +2,7 @@
 title=              App Installer                                                 //application title
 author=             Microsoft Corporation                                         //author
 price=              0.00                                                          //price
+security=           threat                                                        //security
 publiclyVisible=    true                                                          //public
 containsAd=         false                                                         //contains ads
 inAppPurchase=      false                                                         //contains in-app purchase
