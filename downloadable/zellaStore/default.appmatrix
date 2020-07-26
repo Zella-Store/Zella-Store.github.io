@@ -3,6 +3,7 @@ title=              Zella Store Update              //application title
 author=             ZellaSoft 2020                  //author
 price=              0.00                            //price
 publiclyVisible=    false                           //public
+security=           provides external software      //security
 containsAd=         false                           //contains ads
 inAppPurchase=      false                           //contains in-app purchase
 minOSversion=       10.0.15063.0                    //minimum OS build
