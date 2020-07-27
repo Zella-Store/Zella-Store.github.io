@@ -14,4 +14,3 @@ coverPNG=                                           //app (2:3) cover
 discCoverPNG=                                       //app (disc) cover
 [Dependencies]
 [Packages]
-RETAIL=placeholder.appxbundle?0.0.0.0
