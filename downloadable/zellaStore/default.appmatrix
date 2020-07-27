@@ -1,6 +1,6 @@
 [zellaStore appmatrix v0.1]
 title=              Zella Store Update                                                  //application title
-author=             ZellaSoft 2020                                                      //author
+author=             ZellaSoft                                                           //author
 pkgName=            030d48d3-e155-406d-ae9a-a7f6b6c3a164_cg5qw9qysavky                  //Package Name
 pkgFullName=        030d48d3-e155-406d-ae9a-a7f6b6c3a164_0.1.14.0_arm__cg5qw9qysavky    //Package Name
 price=              0.00                                                                //price
