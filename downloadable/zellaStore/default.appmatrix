@@ -20,6 +20,3 @@ Microsoft.NET.Native.Framework.1.7.appx
 Microsoft.NET.Native.Runtime.1.7.appx
 Microsoft.VCLibs.ARM.14.00.appx
 [Packages]
-PREVIEW=ZellaStore_PREVIEW.appxbundle?1.1.1.0
-BETA=ZellaStore_BETA.appxbundle?1.1.3.0
-ALPHA=ZellaStore_ALPHA.appxbundle?1.2.0.0
