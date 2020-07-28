@@ -14,5 +14,3 @@ coverPNG=           StoreCover.png                  //app (2:3) cover
 discCoverPNG=       StoreDiscCover.png              //app (disc) cover
 [Dependencies]
 [Packages]
-RETAIL=Go_TrainingApps_RETAIL.appxbundle?1.1.0.0
-BETA=Go_TrainingApps_BETA.appxbundle?1.2.0.0
