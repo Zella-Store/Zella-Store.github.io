@@ -1,6 +1,8 @@
 [matrixmap]
-Please upgrade to version 0.4.5
-https://Zella-Store.github.io/zellaStore.appxbundle
+Server-side error. null reference at 0x9FFC
+
+//Please upgrade to version 0.4.5
+//https://Zella-Store.github.io/zellaStore.appxbundle
 
 //Server-side error. 0x9FFC
 //Zella services offline 0xF650
