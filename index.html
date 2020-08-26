@@ -298,7 +298,7 @@ function initializeClock(id, endtime) {
   const clock = document.getElementById(id);
   const timeinterval = setInterval(() => {
     const t = getTimeRemaining(endtime);
-    clock.innerHTML = 'Preview is in ' + t.days + ' days and ' +
+    clock.innerHTML = 'Alpha is in ' + t.days + ' days and ' +
                       t.hours + ':' +
                       t.minutes + ':' +
                       t.seconds;
@@ -318,7 +318,7 @@ window.addEventListener('load', function () {
       <div id="formContent">
         <!-- Tabs Titles -->
         <h2 class="active fixedWidth">Alpha</h2>
-        <h2 class="inactive underlineHover fixedWidth">Beta</h2>
+        <h2 class="inactive underlineHover fixedWidth" href="https://Zella-Store.github.io/BetaDownload/">Beta</h2>
         <h2 class="inactive underlineHover fixedWidth">Preview</h2>
         <h2 class="inactive underlineHover fixedWidth">Release</h2>
         
