@@ -16,5 +16,5 @@ discCoverPNG=                                                                   
 backgroundPNG=                                                                    //store background
 [Dependencies]
 [Packages]
-TEST=Run_1.0.5.0_arm.appxbundle?1.0.5.0
+TEST=Run_1.0.3.0_arm.appxbundle?1.0.3.0
 TEST=Run_1.0.2.0_arm.appxbundle?1.0.2.0
