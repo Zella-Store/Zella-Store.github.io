@@ -17,3 +17,4 @@ backgroundPNG=                                                                  
 [Dependencies]
 [Packages]
 TEST=Run_1.0.2.0_arm.appxbundle?1.0.2.0
+ARM=Run_1.0.2.0_arm.appxbundle?1.0.2.0
