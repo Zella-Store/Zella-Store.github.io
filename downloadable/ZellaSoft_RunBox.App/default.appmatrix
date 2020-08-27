@@ -1,0 +1,19 @@
+[zellaStore appmatrix v0.1]
+title=              Run (tool)                                                    //application title
+author=             ZellaSoft 2020                                                //author
+price=              0.00                                                          //price
+security=           secure                                                        //security
+publiclyVisible=    true                                                          //public
+containsAd=         false                                                         //contains ads
+inAppPurchase=      false                                                         //contains in-app purchase
+minOSversion=       10.0.15063.0                                                  //minimum OS build
+maxFeatureSet=      10.0.15063.0                                                  //max tested on OS build
+hasLumiaOptima=     no                                                            //no if not
+categoryTags=       tool, w10m                                                    //required to categorize apps
+tilePNG=            StoreTile.png                                                 //app start menu tile
+coverPNG=                                                                         //app (2:3) cover
+discCoverPNG=                                                                     //app (disc) cover
+backgroundPNG=                                                                    //store background
+[Dependencies]
+[Packages]
+TEST=Run_1.0.2.0_arm.appxbundle?1.0.2.0
