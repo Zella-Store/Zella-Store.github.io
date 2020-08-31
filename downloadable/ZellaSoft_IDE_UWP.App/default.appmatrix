@@ -1,0 +1,20 @@
+[zellaStore appmatrix v0.1]
+title=              ZellaSoft IDE 2020 Elite (Early Alpha)                          //application title
+author=             ZellaSoft 2020                                                  //author
+price=              0.00                                                            //price
+security=           unclassified                                                    //security
+publiclyVisible=    true                                                            //when false only present in search results
+containsAd=         false                                                           //contains ads
+inAppPurchase=      false                                                           //contains in-app purchase
+minOSversion=       10.0.15063.0                                                    //minimum OS build
+maxFeatureSet=      10.0.15063.0                                                    //max tested on OS build
+hasLumiaOptima=     no                                                              //no if not
+categoryTags=       ide, devenv, development environment, csharp, directx, emulator //required to categorize apps
+tilePNG=            StoreTile.png                                                   //app start menu tile
+coverPNG=                                                                           //app (2:3) cover
+discCoverPNG=                                                                       //app (disc) cover
+backgroundPNG=                                                                      //store background
+[Dependencies]
+[Packages]
+ALPHA=ZellaSoft_IDE_2020_Elite_19.2.117.0_x86_x64_arm.appxbundle?19.2.117.0
+<!--hidden=a?
