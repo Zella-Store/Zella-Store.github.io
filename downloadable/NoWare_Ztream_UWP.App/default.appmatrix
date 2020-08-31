@@ -1,0 +1,19 @@
+[zellaStore appmatrix v0.1]
+title=              Ztream (Preview)                                              //application title
+author=             NoWare                                                        //author
+price=              0.00                                                          //price
+security=           unknown                                                       //security
+publiclyVisible=    true                                                          //public
+containsAd=         true                                                          //contains ads
+inAppPurchase=      false                                                         //contains in-app purchase
+minOSversion=       10.0.17763.0                                                  //minimum OS build
+maxFeatureSet=      10.0.10240.0                                                  //max tested on OS build
+hasLumiaOptima=     no                                                            //no if not
+categoryTags=       stream, tv, video, series, anime                              //required to categorize apps
+tilePNG=            StoreTile.png                                                 //app start menu tile
+coverPNG=                                                                         //app (2:3) cover
+discCoverPNG=                                                                     //app (disc) cover
+backgroundPNG=                                                                    //store background
+[Dependencies]
+[Packages]
+Preview=Ztream_1.1.0.0_x86_x64_arm?1.1.0.0
