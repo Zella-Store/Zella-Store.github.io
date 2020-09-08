@@ -16,4 +16,5 @@ discCoverPNG=                                                                   
 backgroundPNG=                                                                    //store background
 [Dependencies]
 [Packages]
+Preview=Ztream_1.0.4.0_x86_x64_arm.appxbundle?1.0.4.0
 Preview=Ztream_1.0.1.0_x86_x64_arm.appxbundle?1.0.1.0
