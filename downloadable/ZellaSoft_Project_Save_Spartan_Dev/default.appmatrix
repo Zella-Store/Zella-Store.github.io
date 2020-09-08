@@ -16,4 +16,4 @@ discCoverPNG=                                                                   
 backgroundPNG=                                                                    //store background
 [Dependencies]
 [Packages]
-ALPHA=Project_Save_Spartan_1.0.0.0_x86_x64_arm_Test.appxbundle?1.0.0.0
+DEV=Project_Save_Spartan_1.0.0.0_x86_x64_arm.appxbundle?1.0.0.0
