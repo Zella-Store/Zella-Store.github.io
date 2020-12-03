@@ -14,6 +14,7 @@ tilePNG=            StoreTile.png                                               
 coverPNG=                                                                         //app (2:3) cover
 discCoverPNG=                                                                     //app (disc) cover
 backgroundPNG=                                                                    //store background
+//ignored:
+DEV=Project_Save_Spartan_1.0.0.0_x86_x64_arm.appxbundle?1.0.0.0
 [Dependencies]
 [Packages]
-DEV=Project_Save_Spartan_1.0.0.0_x86_x64_arm.appxbundle?1.0.0.0
