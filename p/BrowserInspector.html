@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Browser Inspector</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            html, body {
+                font-family: Segoe UI, Segoe UI Midlevel, Segoe WP, Consolas, Arial, Sans-Serif;
+                font-size: 12px;
+            }
+            ul {
+              list-style-type: none;
+            }
+            .caret {
+              cursor: pointer;
+              -webkit-user-select: none; /* Safari 3.1+ */
+              -moz-user-select: none; /* Firefox 2+ */
+              -ms-user-select: none; /* IE 10+ */
+              user-select: none;
+            }
+            .caret::before {
+              content: "\25B6";
+              color: black;
+              display: inline-block;
+              margin-right: 6px;
+            }
+            .caret-down::before {
+              -ms-transform: rotate(90deg); /* IE 9 */
+              -webkit-transform: rotate(90deg); /* Safari */
+              transform: rotate(90deg);  
+            }
+            .nested {
+              display: none;
+            }
+            .active {
+              display: block;
+            }
+		</style>
+	</head>
+	<body>
+		<script>
+            //objX any object that has subobjects (Button.innerText innerText is a subobject)
+            //parent_ is just the part (type <li></li>) of treeview where the sub nodes will be placed in
+            //y is just a number that will count how many node layers its gone deep right now
+            function RecursiveLog(objX, parent_, y, gener) {
+                if (objX == null) {
+                    console.log('Null reference at objX with generic_ = ' + gener.toString());
+                    return;
+                }
+                NavigationStack.push(gener, objX);
+                console.log(NavigationStack.CurrentPath());
+                //try {
+                    //tulj will be the subobject
+                    //objX can be anything you want to show the methods and properties of
+                    for (tulj in objX) {
+                        //var d = AddToTree(tulj.toString(), parent_);
+                        var d;
+                        var generic_, return_, type_ = null;
+                        try { generic_ = tulj; } catch (ex) { generic_ = ""; }
+                        try { return_ = objX[tulj]; } catch (ex) { return_ = ""; }
+                        try { type_ = typeof (objX[tulj]); } catch (ex) { type_ = ""; }
+
+                        
+                        try {
+                            if (return_ == RecursiveLog ||
+                                return_ == AddToTree ||
+                                return_ == CreateRootTree ||
+                                return_ == Stack ||
+                                return_ == NavigationStack) {
+                                /* skip own declarations */
+                            } else if (type_.toString() == "function") {
+                                d = AddToTree(return_.toString().replace(/(\r\n|\n|\r)/gm, ''), parent_);
+                            } else if (type_.toString() == "number" || type_.toString() == "object") {
+                                d = AddToTree(type_.toString() + ' ' + generic_.toString() + ' = ' + return_.toString().replace(/(\r\n|\n|\r)/gm, ''), parent_);
+                            } else {
+                                d = AddToTree(type_.toString() + ' ' + generic_.toString() + ' = "' + return_.toString().replace(/(\r\n|\n|\r)/gm, '') + '"', parent_);
+                            }
+                        } catch (ex) {
+                            try {
+                                d = AddToTree(type_.toString() + ' ' + generic_.toString(), parent_);
+                            } catch (ex2) {
+                                console.log('Super F');
+                            }
+                        }
+                        /* tulj.toString() + ' "' + objX[tulj].toString() + '" ' + typeof(objX[tulj]).toString();*/
+                        if (y < 999 && type_.toString() != "string" && (!NavigationStack.IsPresent(objX[tulj.toString()]))) {
+                            try {
+                                RecursiveLog(objX[tulj.toString()], d, (y + 1), generic_);
+                            } catch (ex_) { alert(ex_); }
+						}
+						if (d != null && d.children.length > 0) {
+							d.parentElement.children[0].classList.add("caret");
+						}
+					}
+				//} catch (ex) {
+				//	/*TODO: Show type and arguments*/ No forget this
+				//}
+                NavigationStack.pop();
+			}
+
+            //This is not much important (this creates the TreeNode)
+			function AddToTree(str, p_) {
+				var ul_ = document.createElement("UL");
+  				p_.appendChild(ul_);
+				
+  				var span_ = document.createElement("SPAN");
+				span_.innerText = str;
+				span_.addEventListener("click", function() {
+					this.parentElement.children[1].classList.toggle("active");
+					this.classList.toggle("caret-down");
+				});
+  				ul_.appendChild(span_);
+				
+  				var li_ = document.createElement("LI");
+				li_.classList.add("nested");
+  				ul_.appendChild(li_);
+				
+				return li_;
+			}
+            
+            //This is not much important (this creates the TreeNode)
+			function CreateRootTree(str, p_) {
+  				var ul_ = document.createElement("UL");
+  				p_.appendChild(ul_);
+				
+  				var span_ = document.createElement("SPAN");
+				span_.innerText = str;
+				span_.classList.add("caret");
+				span_.addEventListener("click", function() {
+					this.parentElement.children[1].classList.toggle("active");
+					this.classList.toggle("caret-down");
+				});
+  				ul_.appendChild(span_);
+				
+  				var li_ = document.createElement("LI");
+				li_.classList.add("nested");
+  				ul_.appendChild(li_);
+				
+				return li_;
+            }
+
+
+
+
+
+
+            //nomorestupidthingswiththis;
+            class Stack {
+                constructor() {
+                    this.items = [];
+                    this.itemsName = [];
+                }
+                push(ObjName, element) {
+                    this.items.push(element);
+                    this.itemsName.push(ObjName);
+                }
+                pop() {
+                    if (this.items.length == 0)
+                        return null;
+                    this.itemsName.pop();
+                    return this.items.pop();
+                }
+                peek() {
+                    return this.items[this.items.length - 1];
+                }
+                peekName() {
+                    return this.itemsName[this.items.length - 1];
+                }
+                isEmpty() {
+                    return this.items.length == 0;
+                }
+                IsPresent(comp) {
+                    try {
+                        if (comp != null) {
+                            if (comp == window.document) { return true; }
+                            var deb;
+                            for (var i = 0; i < this.items.length; i++)
+                                if (comp == this.items[i]) {
+                                    return true;
+                                }
+                        }
+                    } catch (ex) { console.log('F_ ' + ex.toString()); }
+                    return false;
+                }
+                CurrentPath() {
+                    var str = "";
+                    for (var i = 0; i < this.items.length; i++)
+                        str += this.itemsName[i].toString() + ".";
+                    if (str == "") {
+                        return "";
+                    } else {
+                        return str.substring(0, str.length - 1);
+                    }
+                }
+            }
+            var NavigationStack = new Stack();
+
+
+
+
+
+            // After all the functions are declared we start to recursively create a tree of all sub objects of an empty <Button></Button> element.
+            // This will create a list of its objects similar to this:
+            // button.innerText
+            // button.innerHTML
+            // button.margin
+            // ...
+            // we also declare the first TreeNode with CreateRootTree and name it "BUTTON" inside of document.body
+            // the 0 at the end will start the counting how many layers deep we are
+            //RecursiveLog(document.createElement("BUTTON"), CreateRootTree("BUTTON", document.body), 0, "BUTTON");
+            //RecursiveLog(document.createElement("A"), CreateRootTree("A", document.body), 0, "A");
+            RecursiveLog(window, CreateRootTree("window", document.body), 0, "window");
+            //RecursiveLog(new Object, CreateRootTree("Object", document.body), 0, "Object");
+            
+		</script>
+	</body>
+</html>
