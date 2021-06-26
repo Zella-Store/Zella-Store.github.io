@@ -2,17 +2,17 @@
 <html>
 <head>
 <title>Redirect...</title>
-<script defer>
+<script>
 function getURI() {
-try{
-    for (var q in location.search.split("&")) {
-        if (q.split("=")[0].toLower() === "uri") {
-            return q.split("=")[1];
+    try {
+        for (var q in location.search.split("&")) {
+            if (q.split("=")[0].toLower() === "uri") {
+                return q.split("=")[1];
+            }
         }
-    }
-}catch(ex){alert("Bad link");}
+    } catch (ex) { alert("Bad link format"); }
 }
-manualLink.href = getURI();
+manualLink.href = getURI().toString();
 location = manualLink.href;
 </script>
 </head>
