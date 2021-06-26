@@ -6,9 +6,9 @@
 <script>
 function getURI() {
     try {
-        for (var q in location.search.split("&")) {
+        for (var q in location.search.toString().split("&")) {
             if (q.toString().split("=")[0].toLower() === "uri") {
-                return q.toString().split("=")[1];
+                return q.toString().split("=")[1].toString();
             }
         }
     } catch (ex) { alert("Bad link format"); }
@@ -24,6 +24,6 @@ If you have not been redirected within 3 seconds <a id="manualLink" href="http:/
 <br/>
 <a href="http://zellasoft.org/">Return to homepage</a>
 <br/>
-<button onclick="reactURI();">Test1</button>
+<button onclick="reactURI();">Test2</button>
 </body>
 </html>
