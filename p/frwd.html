@@ -8,10 +8,8 @@ function getURI() {
     try {
         var b = location.search.split('&');
         for (var t in b) {
-            for (var v in b[t].toString().split('=')) {
-                if (b[t].split('=')[0] === "uri") {
-                    return b[t].split('=')[1];
-                }
+            if (b[t].split('=')[0] === "uri") {
+                return b[t].split('=')[1];
             }
         }
     } catch (ex) { 
@@ -20,7 +18,6 @@ function getURI() {
 }
 function reactURI(){
     alert(getURI());
-    location = getURI();
 }
 </script>
 </head>
@@ -29,6 +26,6 @@ If you have not been redirected within 3 seconds <a id="manualLink" href="http:/
 <br/>
 <a href="http://zellasoft.org/">Return to homepage</a>
 <br/>
-<button onclick="reactURI();">Test6</button>
+<button onclick="reactURI();">Test7</button>
 </body>
 </html>
