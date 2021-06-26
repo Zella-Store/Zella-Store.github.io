@@ -6,17 +6,21 @@
 <script>
 function getURI() {
     try {
-        for (var q in location.search.split("&")) {
-            if (q.split("=")[0] === "uri") {
-                return q.split("=")[1];
+        for (var t in b){
+            for (var v in b[t].toString().split('=')) {
+                if (b[t].split('=')[0] === "uri") {
+                    return b[t].split('=')[1];
+                }
             }
         }
-    } catch (ex) { alert("Bad link format"); }
-}
-    function reactURI(){
-        alert(getURI());
-        location = getURI();
+    } catch (ex) { 
+        alert("Bad link format");
     }
+}
+function reactURI(){
+    alert(getURI());
+    location = getURI();
+}
 </script>
 </head>
 <body>
