@@ -3,8 +3,15 @@
 <head>
 <title>Redirect...</title>
 <script defer>
-manualLink.href = location.search;
-location = location.search;
+function getURI() {
+    for (var q in location.search.split("&")) {
+        if (q.split("=")[0].toLower() === "uri") {
+            return q.split("=")[1];
+        }
+    }
+}
+manualLink.href = getURI();
+location = manualLink.href;
 </script>
 </head>
 <body>
