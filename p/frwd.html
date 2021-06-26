@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Redirect...</title>
+<script defer>
+manualLink.href = location.search;
+location = location.search;
+</script>
+</head>
 <body>
-The link was not found.
+If you have not been redirected within 3 seconds <a id="manualLink" href="http://zellasoft.org/?redirectfailed=1">click here</a>.
 <br/>
 <a href="http://zellasoft.org/">Return to homepage</a>
 </body>
