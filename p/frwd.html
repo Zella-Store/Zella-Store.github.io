@@ -6,7 +6,7 @@
 <script>
 function getURI() {
     try {
-        var b = location.search.split('&');
+        var b = location.search.remove(0,1).split('&');
         alert(b);
         for (var t in b) {
             alert(b[t]);
