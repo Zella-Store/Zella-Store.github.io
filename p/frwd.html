@@ -4,11 +4,13 @@
 <title>Redirect...</title>
 <script defer>
 function getURI() {
+try{
     for (var q in location.search.split("&")) {
         if (q.split("=")[0].toLower() === "uri") {
             return q.split("=")[1];
         }
     }
+}catch(ex){alert("Bad link");}
 }
 manualLink.href = getURI();
 location = manualLink.href;
