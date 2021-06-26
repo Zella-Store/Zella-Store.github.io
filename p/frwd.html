@@ -7,8 +7,11 @@
 function getURI() {
     try {
         var b = location.search.split('&');
+        alert(b);
         for (var t in b) {
+            alert(b[t]);
             if (b[t].split('=')[0] === "uri") {
+                alert('Found');
                 return b[t].split('=')[1];
             }
         }
@@ -26,6 +29,6 @@ If you have not been redirected within 3 seconds <a id="manualLink" href="http:/
 <br/>
 <a href="http://zellasoft.org/">Return to homepage</a>
 <br/>
-<button onclick="reactURI();">Test7</button>
+<button onclick="reactURI();">Test8</button>
 </body>
 </html>
