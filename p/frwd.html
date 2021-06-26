@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redirect...</title>
-<script>
+<script defer>
 function getURI() {
     try {
         for (var q in location.search.split("&")) {
@@ -13,14 +13,16 @@ function getURI() {
         }
     } catch (ex) { alert("Bad link format"); }
 }
-location = getURI();
-manualLink.href = getURI();
+    function reactURI(){
+        alert(getURI());
+        location = getURI();
+    }
 </script>
 </head>
 <body>
 If you have not been redirected within 3 seconds <a id="manualLink" href="http://zellasoft.org/?redirectfailed=1">click here</a>.
 <br/>
 <a href="http://zellasoft.org/">Return to homepage</a>
-<button onclick="getURI();">Test</button>
+<br/><button onclick="reactURI();">Test</button>
 </body>
 </html>
