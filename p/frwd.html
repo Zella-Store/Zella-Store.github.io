@@ -13,8 +13,8 @@ function getURI() {
         }
     } catch (ex) { alert("Bad link format"); }
 }
-manualLink.href = getURI().toString();
-location = manualLink.href;
+location = getURI();
+manualLink.href = getURI();
 </script>
 </head>
 <body>
