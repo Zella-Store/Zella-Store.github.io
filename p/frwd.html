@@ -5,25 +5,29 @@
 <title>Redirect...</title>
 <script defer>
 rd = {
-    url: "",
+    url: "#",
     protocol: "https://",
 }
 function getValueOf(qry) {
     try {
         var b = location.search.substring(1).split('&');
+        alert(b);
         for (var t in b) {
             if (b[t].split('=')[0] === qry) {
+                alert(b[t] + " >> " + b[t].split('=')[0]);
                 return b[t].substring(b[t].split('=')[0].length + 1);
             }
         }
     } catch (ex) { 
         alert("Bad link format");
     }
+    return "";
 }
-rd.url = "" | getValueOf("url");
-rd.protocol = "https://" | getValueOf("prot");
-if (rd.url === "" && !(rd.protocol === "https")) {
-if (!(rd.protocol === "http")) {
+rd.url = ("" | getValueOf("url"));
+rd.protocol = ("https://" | getValueOf("prot"));
+if (rd.url === "" && !(rd.protocol === "https://")) {
+if (!(rd.protocol === "http://")) {
+    alert("Navig");
     location.replace(rd.url + rd.protocol);
 }
 }
