@@ -22,7 +22,11 @@ function getValueOf(qry) {
 }
 rd.url = getValueOf("url") | "";
 rd.protocol = getValueOf("prot") | "https://";
-location.replace(rd.url + rd.protocol);
+if (rd.url === "" && !(rd.protocol === "https")) {
+if (!(rd.protocol === "http")) {
+    location.replace(rd.url + rd.protocol);
+}
+}
 manualLink.setAttribute("href", rd.url + rd.protocol);
 </script>
 </head>
