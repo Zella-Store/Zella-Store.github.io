@@ -23,7 +23,7 @@ function getValueOf(qry) {
 rd.url = getValueOf("url") | "";
 rd.protocol = getValueOf("prot") | "https://";
 location.replace(rd.url + rd.protocol);
-manualLink.href = rd.url + rd.protocol;
+manualLink.setAttribute("href", = rd.url + rd.protocol);
 </script>
 </head>
 <body>
