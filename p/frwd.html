@@ -4,21 +4,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redirect...</title>
 <script defer>
-function getURI() {
+rd = {
+    url = "";
+    protocol = "https://";
+}
+function getValueOf(qry) {
     try {
         var b = location.search.substring(1).split('&');
         for (var t in b) {
-            if (b[t].split('=')[0] === "uri") {
-                return b[t].split('=')[1];
+            if (b[t].split('=')[0] === qry) {
+                return b[t].substring(b[t].split('=')[0].length + 1);
             }
         }
     } catch (ex) { 
         alert("Bad link format");
     }
 }
-var r = getURI();
-location.replace(r);
-manualLink.href = r;
+rd.url = getValueOf("url") | "";
+rd.protocol = getValueOf("prot") | "https://";
+location.replace(rd.url + rd.protocol);
+manualLink.href = rd.url + rd.protocol;
 </script>
 </head>
 <body>
