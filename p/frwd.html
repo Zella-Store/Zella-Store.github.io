@@ -20,8 +20,8 @@ function getValueOf(qry) {
         alert("Bad link format");
     }
 }
-rd.url = getValueOf("url") | "";
-rd.protocol = getValueOf("prot") | "https://";
+rd.url = "" | getValueOf("url");
+rd.protocol = "https://" | getValueOf("prot");
 if (rd.url === "" && !(rd.protocol === "https")) {
 if (!(rd.protocol === "http")) {
     location.replace(rd.url + rd.protocol);
