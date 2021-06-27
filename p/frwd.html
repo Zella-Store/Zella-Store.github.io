@@ -3,18 +3,18 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redirect...</title>
+</head>
+<body>
+<a id="manualLink" href="http://zellasoft.org/?redirectfailed=1">Click here</a> to continue or <a href="http://zellasoft.org/">return to homepage</a>.
 <script defer>
-rd = {
-    url: "#",
-    protocol: "https://",
-}
+var rd = {};
+rd.url = "";
+rd.protocol = "https://";
+var b = location.search.substring(1).split('&');
 function getValueOf(qry) {
     try {
-        var b = location.search.substring(1).split('&');
-        alert(b);
         for (var t in b) {
             if (b[t].split('=')[0] === qry) {
-                alert(b[t] + " >> " + b[t].split('=')[0]);
                 return b[t].substring(b[t].split('=')[0].length + 1);
             }
         }
@@ -23,20 +23,15 @@ function getValueOf(qry) {
     }
     return "";
 }
-rd.url = ("" | getValueOf("url"));
-rd.protocol = ("https://" | getValueOf("prot"));
-if (rd.url === "" && !(rd.protocol === "https://")) {
-if (!(rd.protocol === "http://")) {
-    alert("Navig");
-    location.replace(rd.url + rd.protocol);
+rd.protocol = getValueOf("prot").toString() || "https://";
+rd.url = getValueOf("url");
+if (!(rd.protocol === "http://" | rd.protocol === "https://")) {
+    location.replace(rd.protocol + rd.url);
+} else if (rd.url !== "") {
+    location.replace(rd.protocol + rd.url);
 }
-}
-manualLink.setAttribute("href", rd.url + rd.protocol);
+var fallbacklink = document.getElementById("manualLink");
+fallbacklink.href = rd.protocol + rd.url;
 </script>
-</head>
-<body>
-If you have not been redirected within 3 seconds <a id="manualLink" href="http://zellasoft.org/?redirectfailed=1">click here</a>.
-<br/>
-<a href="http://zellasoft.org/">Return to homepage</a>
 </body>
 </html>
