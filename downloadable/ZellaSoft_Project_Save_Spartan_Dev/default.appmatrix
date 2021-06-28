@@ -1,8 +1,9 @@
 [zellaStore appmatrix v0.1]
-title=              Project Save Spartan                                          //application title
-author=             ZellaSoft 2020                                                //author
+title=              ZΛOX Browser                                                  //application title
+latinTitle=         ZAOX Browser                                                  //application title ignoring special characters
+author=             ZellaSoft 2021                                                //author
 price=              0.00                                                          //price
-security=           unclassified                                                  //security
+security=           browser                                                       //security
 publiclyVisible=    true                                                          //public
 containsAd=         false                                                         //contains ads
 inAppPurchase=      false                                                         //contains in-app purchase
