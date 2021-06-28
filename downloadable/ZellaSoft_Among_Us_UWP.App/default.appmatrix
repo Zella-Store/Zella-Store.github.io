@@ -1,0 +1,19 @@
+[zellaStore appmatrix v0.1]
+title=              Among Us                                                      //application title
+author=             ZellaSoft Ports                                               //author
+price=              0.00                                                          //price
+security=           secure                                                        //security
+publiclyVisible=    true                                                          //public
+containsAd=         true                                                          //contains ads
+inAppPurchase=      true                                                          //contains in-app purchase
+minOSversion=       10.0.14393.0                                                  //minimum OS build
+maxFeatureSet=      10.0.14393.0                                                  //max tested on OS build
+hasLumiaOptima=     no                                                            //no if not
+categoryTags=       game, uwp, online, multiplayer                                //required to categorize apps
+tilePNG=            StoreTile.png                                                 //app start menu tile
+coverPNG=                                                                         //app (2:3) cover
+discCoverPNG=                                                                     //app (disc) cover
+backgroundPNG=      StoreBackground.png                                           //store background
+[Dependencies]
+[Packages]
+//BETA=ZellaSoft.AmongUs_2021.0.0.1.appxbundle?2021.0.0.1
