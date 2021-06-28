@@ -1,7 +1,7 @@
 [zellaStore appmatrix v0.1]
-title=              Placeholder                     //application title
-author=             Placeholder                     //author
-price=              -9999.99                        //price
+title=              Secret                          //application title
+author=             ZellaSoft 2021                  //author
+price=              0                               //price
 publiclyVisible=    false                           //public
 containsAd=         false                           //contains ads
 inAppPurchase=      false                           //contains in-app purchase
@@ -14,3 +14,4 @@ coverPNG=                                           //app (2:3) cover
 discCoverPNG=                                       //app (disc) cover
 [Dependencies]
 [Packages]
+INTERNAL=packet.appxbundle?2021.9.1.11
