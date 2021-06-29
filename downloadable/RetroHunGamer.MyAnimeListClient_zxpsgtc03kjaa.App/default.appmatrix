@@ -1,0 +1,23 @@
+[zellaStore appmatrix v0.1]
+title=              MAL Mobile                                                            //application title
+author=             RetroHunGamer                                                         //author
+price=              0.00                                                                  //price
+publiclyVisible=    true                                                                  //public
+security=           secure                                                                //security
+containsAd=         false                                                                 //contains ads
+inAppPurchase=      false                                                                 //contains in-app purchase
+minOSversion=       10.0.14393.0                                                          //minimum OS build
+maxFeatureSet=      10.0.14393.0                                                          //max tested on OS build
+hasLumiaOptima=     no                                                                    //no if not
+categoryTags=       anime, uwp, comic, manga, series, movies, community, socialmedia      //required to categorize apps
+tilePNG=            StoreTile.png                                                         //app start menu tile
+coverPNG=                                                                                 //app (2:3) cover
+discCoverPNG=                                                                             //app (disc) cover
+backgroundPNG=                                                                            //store background
+[Dependencies]
+Microsoft.NET.Native.Framework.1.7.appx
+Microsoft.NET.Native.Runtime.1.7.appx
+Microsoft.VCLibs.ARM.14.00.appx
+[Packages]
+<!--0=1?1.0.0.0
+<!--1=2?1.0.0.1
