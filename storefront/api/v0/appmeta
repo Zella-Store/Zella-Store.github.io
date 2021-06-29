@@ -1,1 +1,1 @@
-"APIv0.0":{reload:"outdated_client"}
+"APIv0.0":{reload:"outdated_client",fatal:false,continue:true}
