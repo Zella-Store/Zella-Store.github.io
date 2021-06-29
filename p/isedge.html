@@ -61,6 +61,11 @@
                 return 'Most likely Chrome or Chromium based';
             } else {
                 return 'Mobile Edge with fake Chrome User Agent';
+                if (navigator.appVersion.includes(" WebView/")) {
+                    return 'Mobile Edge with fake Chrome User Agent (WebView)';
+                } else {
+                    return 'Mobile Edge with fake Chrome User Agent';
+                }
             }
         } else {
             return 'Unrecognized (Firefox, Safari, etc.)';
