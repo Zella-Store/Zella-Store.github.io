@@ -20,8 +20,11 @@
                 return 'Desktop Edge Legacy';
             } else if (navigator.platform === "ARM" && navigator.appVersion.includes("Windows Phone 10.0")) {
                 if ("msCredentials" in navigator) {
-                    return 'Mobile Edge Physical';
+                    return 'Ledge type 1';//'Mobile Edge Physical';
+                } else if ("credentials" in navigator) {
+                    return 'Ledge type 2';
                 } else {
+                    return 'Ledge type ?';
                     return 'ARM Desktop Edge Legacy (Mobile UserAgent)';
                 }
             } else if (navigator.platform === "ARM") {
