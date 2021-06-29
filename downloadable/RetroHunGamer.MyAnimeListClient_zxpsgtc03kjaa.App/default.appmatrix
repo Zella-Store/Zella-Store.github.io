@@ -19,5 +19,5 @@ Microsoft.NET.Native.Framework.1.7.appx
 Microsoft.NET.Native.Runtime.1.7.appx
 Microsoft.VCLibs.ARM.14.00.appx
 [Packages]
-<!--0=1?1.0.0.0
-<!--1=2?1.0.0.1
+<!--?=1?0.0.0.0
+BETA=MyAnimeList_Client_1.0.13.0.appxbundle?1.0.13.0
