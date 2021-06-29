@@ -34,20 +34,16 @@
                 return 'Seems like Edge Legacy on ' + navigator.platform + ' architecure. Take a screenshot!';
             }
         } else if (navigator.appVersion.includes(" Edg/") && navigator.appVersion.includes(" Chrome/")) {
-            if ("msCredentials" in navigator && isChakraLegacy) {
+            if (isChakraLegacy) {
                 return 'Mobile Edge with fake Chromium Edge User Agent';
-            } else if (!isChakraLegacy) {
-                return 'Chromium Edge';
             } else {
-                return 'Looks like some kind of Edge Legacy';
+                return 'Chromium Edge';
             }
         } else if (navigator.appVersion.includes(" Chrome/")) {
-            if ("msCredentials" in navigator && isChakraLegacy) {
-                return 'Mobile Edge with fake Chrome User Agent';
-            } else if (!isChakraLegacy) {
+            if (!isChakraLegacy) {
                 return 'Most likely Chrome or Chromium based';
             } else {
-                return 'isChakraLegacy';
+                return 'Mobile Edge with fake Chrome User Agent';
             }
         } else {
             return 'Unrecognized (Firefox, Safari, etc.)';
