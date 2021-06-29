@@ -8,16 +8,18 @@
 <script defer>
     var isChakraLegacy = undefined;
     function TestBrwsr() {
-       if (isChakraLegacy === undefined){
-           return 'Press EvilCheck first';
+        try {
+           eval("try { isChakraLegacy = false; } catch {}");
+       } catch (ex) {
+           isChakraLegacy = true;
        }
-        if (navigator.appVersion.includes(" Edge/") && navigator.appVersion.includes(" Chrome/")) {
+        if (navigator.appVersion.includes(" Edge/") && navigator.appVersion.includes(" Chrome/") && isChakraLegacy) {
             if (navigator.platform === "Win32" && navigator.appVersion.includes("Windows Phone 10.0")) {
                 return 'x86 Mobile Edge (Emulator?)';
             } else if (navigator.platform === "Win32") {
                 return 'Desktop Edge Legacy';
             } else if (navigator.platform === "ARM" && navigator.appVersion.includes("Windows Phone 10.0")) {
-                if ("msCredentials" in navigator && isChakraLegacy) {
+                if ("msCredentials" in navigator) {
                     return 'Mobile Edge Physical';
                 } else {
                     return 'ARM Desktop Edge Legacy (Mobile UserAgent)';
@@ -28,34 +30,29 @@
                 return 'Seems like Edge Legacy on ' + navigator.platform + ' architecure. Take a screenshot!';
             }
         } else if (navigator.appVersion.includes(" Edg/") && navigator.appVersion.includes(" Chrome/")) {
-            if ("msCredentials" in navigator) {
+            if ("msCredentials" in navigator && isChakraLegacy) {
                 return 'Mobile Edge with fake Chromium Edge User Agent';
-            } else {
+            } else if (!isChakraLegacy) {
                 return 'Chromium Edge';
+            } else {
+                return 'Looks like some kind of Edge Legacy';
             }
         } else if (navigator.appVersion.includes(" Chrome/")) {
-            if ("msCredentials" in navigator) {
+            if ("msCredentials" in navigator && isChakraLegacy) {
                 return 'Mobile Edge with fake Chrome User Agent';
-            } else {
+            } else if (!isChakraLegacy) {
                 return 'Most likely Chrome or Chromium based';
+            } else {
+                return 'isChakraLegacy';
             }
         } else {
-            return 'Unrecognized';
+            return 'Unrecognized (Firefox, Safari, etc.)';
         }
     }
    function TestBrwsrW() {
       alert(TestBrwsr());
    }
-   function eviltry() {
-       try {
-           eval("try { isChakraLegacy = false; } catch {}");
-       } catch (ex) {
-           isChakraLegacy = true;
-       }
-   }
 </script>
 <button onclick="TestBrwsrW()">Test</button>
-</br>
-<button onclick="eviltry()">EvilCheck</button>
 </body>
 <html>
