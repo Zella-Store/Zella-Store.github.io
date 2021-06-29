@@ -9,10 +9,10 @@
     var isChakraLegacy = undefined;
     function TestBrwsr() {
         try {
-           eval("try { isChakraLegacy = false; } catch {}");
-       } catch (ex) {
-           isChakraLegacy = true;
-       }
+            eval("try { isChakraLegacy = false; } catch {}");
+        } catch (ex) {
+            isChakraLegacy = true;
+        }
         if (navigator.appVersion.includes(" Edge/") && navigator.appVersion.includes(" Chrome/") && isChakraLegacy) {
             if (navigator.platform === "Win32" && navigator.appVersion.includes("Windows Phone 10.0")) {
                 if (navigator.appVersion.includes(" WebView/")) {
@@ -60,7 +60,6 @@
             if (!isChakraLegacy) {
                 return 'Most likely Chrome or Chromium based';
             } else {
-                return 'Mobile Edge with fake Chrome User Agent';
                 if (navigator.appVersion.includes(" WebView/")) {
                     return 'Mobile Edge with fake Chrome User Agent (WebView)';
                 } else {
