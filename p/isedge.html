@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edge detector ultimate</title>
+</head>
+<body>
+<script>
+var isChakraLegacy = undefined;
+function TestBrwsr() {
+try {
+   try {
+       isChakraLegacy = false;
+   } catch {}
+} catch (ex) {
+    isChakraLegacy = true;
+}
+
+if (navigator.appVersion.includes(" Edge/") && navigator.appVersion.includes(" Chrome/")) {
+    if (navigator.platform === "Win32" && navigator.appVersion.includes("Windows Phone 10.0")) {
+        return 'x86 Mobile Edge (Emulator?)';
+    } else if (navigator.platform === "Win32") {
+        return 'Desktop Edge Legacy';
+    } else if (navigator.platform === "ARM" && navigator.appVersion.includes("Windows Phone 10.0")) {
+        if ("msCredentials" in navigator && isChakraLegacy) {
+            return 'Mobile Edge Physical';
+        } else {
+            return 'ARM Desktop Edge Legacy (Mobile UserAgent)';
+        }
+    } else if (navigator.platform === "ARM") {
+        return 'ARM Desktop Edge'
+    } else {
+        return 'Seems like Edge Legacy on ' + navigator.platform + ' architecure. Take a screenshot!';
+    }
+} else if (navigator.appVersion.includes(" Edg/") && navigator.appVersion.includes(" Chrome/")) {
+    if ("msCredentials" in navigator) {
+        return 'Mobile Edge with fake Chromium Edge User Agent';
+    } else {
+        return 'Chromium Edge';
+    }
+} else if (navigator.appVersion.includes(" Chrome/")) {
+    if ("msCredentials" in navigator) {
+        return 'Mobile Edge with fake Chrome User Agent';
+    } else {
+        return 'Most likely Chrome or Chromium based';
+    }
+} else {
+    return 'Unrecognized';
+}
+}
+</script>
+<button onclick="alert(TestBrwsr());">Test</button>
+</body>
+<html>
