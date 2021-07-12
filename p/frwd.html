@@ -32,6 +32,7 @@ if (!(rd.protocol === "http://" | rd.protocol === "https://")) {
 }
 var fallbacklink = document.getElementById("manualLink");
 fallbacklink.href = rd.protocol + rd.url;
+window.close();
 </script>
 </body>
 </html>
