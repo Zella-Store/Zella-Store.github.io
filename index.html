@@ -293,9 +293,8 @@ input[type=text]:placeholder {
     }
     return "";
 }
-      if (window.name == "noNewServer") {
+      if (window.name == "noNewServer" | (getValueOf("fallbackserver") == "true" | getValueOf("fallbackserver") == "1")) {
           window.name = "";
-      } else if (getValueOf("fallbackserver") == "true" | getValueOf("fallbackserver") == "1") {
           window.history.pushState('', 'Fallback Server', '/');
       } else {
           window.name = "noNewServer";
