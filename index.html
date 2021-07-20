@@ -296,8 +296,9 @@ input[type=text]:placeholder {
       if (window.name != "noNewServer"){
           window.name = "noNewServer";
           window.location.replace("http://zellasoft.org/?fallbackserver=true");
-      } else if (window.name == "noNewServer" && getValueOf("fallbackserver") == "true") {
+      } else if (window.name == "noNewServer" && (getValueOf("fallbackserver") == "true" || getValueOf("fallbackserver") == "1")) {
           window.name = "";
+          location.search = "";
       }
       var deadline = 'July 28 2020 12:00:00 GMT+0100';
 function getTimeRemaining(endtime){
