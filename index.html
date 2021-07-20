@@ -277,6 +277,10 @@ input[type=text]:placeholder {
 }
     </style>
     <script>
+      var b = [];
+      if (location.search.length > 0) {
+          b = location.search.substring(1).split('&');
+      }
       function getValueOf(qry) {
     try {
         for (var t in b) {
