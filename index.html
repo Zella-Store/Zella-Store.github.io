@@ -277,9 +277,23 @@ input[type=text]:placeholder {
 }
     </style>
     <script>
+      function getValueOf(qry) {
+    try {
+        for (var t in b) {
+            if (b[t].split('=')[0] === qry) {
+                return b[t].substring(b[t].split('=')[0].length + 1);
+            }
+        }
+    } catch (ex) { 
+        alert("Bad link format");
+    }
+    return "";
+}
       if (window.name != "noNewServer"){
           window.name = "noNewServer";
           window.location.replace("http://zellasoft.org/?fallbackserver=true");
+      } else if (window.name == "noNewServer" && getValueOf("fallbackserver") == "true") {
+          window.name = "";
       }
       var deadline = 'July 28 2020 12:00:00 GMT+0100';
 function getTimeRemaining(endtime){
