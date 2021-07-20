@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Download Zella Store</title>
+    <title>Download Zella Store (fallback server)</title>
     <style type="text/css">
 /* BASIC */
 
@@ -293,7 +293,7 @@ input[type=text]:placeholder {
     }
     return "";
 }
-      if (window.name != "noNewServer"){
+      if (!(window.name == "noNewServer" | (getValueOf("fallbackserver") == "true" | getValueOf("fallbackserver") == "1"))) {
           window.name = "noNewServer";
           window.location.replace("http://zellasoft.org/?fallbackserver=true");
       } else if (window.name == "noNewServer" && (getValueOf("fallbackserver") == "true" || getValueOf("fallbackserver") == "1")) {
