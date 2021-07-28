@@ -1,5 +1,5 @@
 [zellaStore appmatrix v0.1]
-title=              MAL Mobile                                                            //application title
+title=              MAL Mobile (MyAnimeList.net)                                          //application title
 author=             RetroHunGamer                                                         //author
 price=              0.00                                                                  //price
 publiclyVisible=    true                                                                  //public
@@ -20,4 +20,4 @@ Microsoft.NET.Native.Runtime.1.7.appx
 Microsoft.VCLibs.ARM.14.00.appx
 [Packages]
 BETA=MyAnimeList_Client_1.0.13.0.appxbundle?1.0.13.0
-<!--?=1?0.0.0.0
+BETA=MyAnimeList_Client_1.0.13.0.appxbundle?1.0.13.0
