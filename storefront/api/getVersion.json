@@ -1,1 +1,1 @@
-"std":{"reload":"now","version":{"BigVersion":0.4,"LittleVersion":5.0}}
+"castobj":{"type":"modelcheck","base":{"client.version":{"BigVersion":0.4,"LittleVersion":5.0}},"same":{"StoreNavigate":["//home"]},"more":{"StoreNavigate":["//home"]},"less":{"CheckForUpdates"}}
