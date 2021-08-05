@@ -16,6 +16,6 @@ discCoverPNG=                                                                   
 backgroundPNG=                                                                      //store background
 [Dependencies]
 [Packages]
-RETAIL=ZellaSoft.WiFi.Connect_1.0.1.0_arm.appxbundle?1.0.1.0
-RETAIL=ZellaSoft.WiFi.Connect_1.0.2.0_arm.appxbundle?1.0.2.0
 RETAIL=ZellaSoft.WiFi.Connect_1.0.3.0_arm.appxbundle?1.0.3.0
+RETAIL=ZellaSoft.WiFi.Connect_1.0.2.0_arm.appxbundle?1.0.2.0
+RETAIL=ZellaSoft.WiFi.Connect_1.0.1.0_arm.appxbundle?1.0.1.0
