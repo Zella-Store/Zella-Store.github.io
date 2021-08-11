@@ -232,7 +232,7 @@
 
         function FullScreenBtn_Click() {
             var isFullScreen = document.getElementsByClassName("VideoPlayerElement")[0];
-            if (!document.fullscreenElement) {
+            if (!document.fullscreen) {
                 isFullScreen.requestFullscreen();
             } else if (document.exitFullscreen) {
                 document.exitFullscreen();
