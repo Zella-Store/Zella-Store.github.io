@@ -1,0 +1,323 @@
+.v-controls-bottom {
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    bottom: 0;
+}
+
+.v-controls-bottom-spacer {
+}
+
+.v-controls-bottom-left {
+    height: 40px;
+    position: fixed;
+    left: 12px;
+    bottom: 0;
+}
+
+.v-controls-bottom-right {
+    height: 40px;
+    position: fixed;
+    right: 12px;
+    bottom: 0;
+}
+
+.v-controls-bottom-trackbar {
+    height: 3px;
+    top: 1px;
+    margin: 0 12px 0 12px;
+    background: rgba(127,127,127,0.66);
+}
+
+
+#ytp-bound-time-left, #ytp-bound-time-seperator, #ytp-bound-time-right {
+    display: inline;
+    position: relative;
+    bottom: 12px;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    color: #222;
+}
+
+
+
+.v-time-shadow {
+    text-shadow: #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FFF 0px 0px 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.v-gradient-bottom {
+    width: 100%;
+    height: 303px;
+    position: fixed;
+    bottom: 0;
+    background-position: bottom;
+    background-repeat: repeat-x;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ytp-fullscreen-button {
+    width: 36px;
+    height: 36px
+}
+
+.ytp-generic-button {
+    width: 36px;
+    height: 36px
+}
+
+.ytp-svg-fill {
+    fill: #222
+}
+
+.ytp-svg-shadow {
+    stroke: #FFF;
+    stroke-opacity: .55;
+    stroke-width: 2px;
+    fill: none
+}
+
+.ytp-svg-shadow-lite {
+    stroke: #FFF;
+    stroke-opacity: .55;
+    stroke-width: 1px;
+    fill: none
+}
+
+
+
+
+.video-controls-normal {
+    transition-duration: .15s;
+    opacity: 1;
+}
+.video-hidden-controls {
+    transition-duration: .2s;
+    opacity: 0;
+}
+
+
+.settings-click-animation {
+    transition-duration: .2s;
+    transform: rotateZ(60deg);
+}
+
+.v-info-tip-base {
+    opacity: 0;
+    position: absolute;
+    /*background: rgba(16, 16, 16, 0.50);*/
+    border-radius: 50%;
+    line-height: 0;
+    left: 50%;
+    top: 50%;
+    transition: ease-in-out 0.125s;
+    transform: translate(-50%, -50%) scale(0.25, 0.25);
+}
+
+.v-info-tip {
+    transition: ease-in-out 0.125s;
+    transform: translate(-50%, -50%) scale(1.0, 1.0);
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ytp-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+    text-align: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    cursor: default;
+    line-height: inherit
+}
+
+    .ytp-button:focus, .ytp-button {
+        outline: 0
+    }
+
+        .ytp-button::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+
+.html5-video-player .ytp-button[aria-disabled=true], .html5-video-player .ytp-button[disabled] {
+    opacity: .5
+}
+
+.ytp-button:not([aria-disabled=true]):not([disabled]):not([aria-hidden=true]) {
+    cursor: pointer
+}
+
+.ytp-probably-keyboard-focus .ytp-button:focus {
+    box-shadow: inset 0 0 0 2px rgba(27,127,204,0.8)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ytp-fullscreen-button-corner-0, .ytp-fullscreen-button-corner-1, .ytp-fullscreen-button-corner-2, .ytp-fullscreen-button-corner-3 {
+    -webkit-transform: none;
+    transform: none
+}
+
+.ytp-fullscreen-button:not([aria-disabled=true]):hover .ytp-fullscreen-button-corner-0 {
+    -webkit-animation: ytp-fullscreen-button-corner-0-animation .4s cubic-bezier(0.4,0,0.2,1);
+    animation: ytp-fullscreen-button-corner-0-animation .4s cubic-bezier(0.4,0,0.2,1)
+}
+
+.ytp-fullscreen-button:not([aria-disabled=true]):hover .ytp-fullscreen-button-corner-1 {
+    -webkit-animation: ytp-fullscreen-button-corner-1-animation .4s cubic-bezier(0.4,0,0.2,1);
+    animation: ytp-fullscreen-button-corner-1-animation .4s cubic-bezier(0.4,0,0.2,1)
+}
+
+.ytp-fullscreen-button:not([aria-disabled=true]):hover .ytp-fullscreen-button-corner-2 {
+    -webkit-animation: ytp-fullscreen-button-corner-2-animation .4s cubic-bezier(0.4,0,0.2,1);
+    animation: ytp-fullscreen-button-corner-2-animation .4s cubic-bezier(0.4,0,0.2,1)
+}
+
+.ytp-fullscreen-button:not([aria-disabled=true]):hover .ytp-fullscreen-button-corner-3 {
+    -webkit-animation: ytp-fullscreen-button-corner-3-animation .4s cubic-bezier(0.4,0,0.2,1);
+    animation: ytp-fullscreen-button-corner-3-animation .4s cubic-bezier(0.4,0,0.2,1)
+}
+
+@-webkit-keyframes ytp-fullscreen-button-corner-0-animation {
+    50% {
+        -webkit-transform: translate(-2px,-2px);
+        transform: translate(-2px,-2px)
+    }
+}
+
+@keyframes ytp-fullscreen-button-corner-0-animation {
+    50% {
+        -webkit-transform: translate(-2px,-2px);
+        transform: translate(-2px,-2px)
+    }
+}
+
+@-webkit-keyframes ytp-fullscreen-button-corner-1-animation {
+    50% {
+        -webkit-transform: translate(2px,-2px);
+        transform: translate(2px,-2px)
+    }
+}
+
+@keyframes ytp-fullscreen-button-corner-1-animation {
+    50% {
+        -webkit-transform: translate(2px,-2px);
+        transform: translate(2px,-2px)
+    }
+}
+
+@-webkit-keyframes ytp-fullscreen-button-corner-2-animation {
+    50% {
+        -webkit-transform: translate(2px,2px);
+        transform: translate(2px,2px)
+    }
+}
+
+@keyframes ytp-fullscreen-button-corner-2-animation {
+    50% {
+        -webkit-transform: translate(2px,2px);
+        transform: translate(2px,2px)
+    }
+}
+
+@-webkit-keyframes ytp-fullscreen-button-corner-3-animation {
+    50% {
+        -webkit-transform: translate(-2px,2px);
+        transform: translate(-2px,2px)
+    }
+}
+
+@keyframes ytp-fullscreen-button-corner-3-animation {
+    50% {
+        -webkit-transform: translate(-2px,2px);
+        transform: translate(-2px,2px)
+    }
+}
