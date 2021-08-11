@@ -27,7 +27,7 @@
 
     <div class="VideoPlayerElement">
         <video id="video-raw-element" tabindex="-1" controlslist="nodownload" autoplay style="width: 100%; height: 100%;"
-               src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+               src="about:blank"
                onmousemove="Video_MouseMove();"
                ondblclick="FullScreenBtn_Click();"
                onclick="PausePlayBtn_Click();"
@@ -36,7 +36,7 @@
                onchange="UpdateControls();"
                ondurationchange="UpdateControls();"
                oncuechange="UpdateControls();"
-               ontimeupdate="UpdateControls();"></video>
+               ontimeupdate="UpdateControls();">Invalid link</video>
 
         <div id="v-default-info-tip" class="v-info-tip-base">
             <svg id="pause-info-tip-icon" version="1.1" viewBox="0 0 36 36" height="108px" width="108px" style="display: none;">
@@ -189,7 +189,7 @@
                             </g>
                         </svg>
                     </button>
-                    <button class="ytp-fullscreen-button ytp-button" title="Teljes képernyő (f)" onclick="FullScreenBtn_Click();">
+                    <button class="ytp-fullscreen-button ytp-button" title="Teljes képernyő (f)" onclick="FullScreenBtn_Click();" style="display: none;">
                         <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
                             <g class="ytp-fullscreen-button-corner-0" style="transform: translate(16px, 10px);">
                                 <use class="ytp-svg-shadow" xlink:href="#ytp-id-6A">
@@ -327,7 +327,8 @@
             var hour = (ltime - min - sec);
             return (hour > 0) ? (hour.toString() + ":") : "" + min.toString().padStart(2, '0') + ":" + sec.toString().padStart(2, '0')
         }
-
+        rawvideo = document.getElementById("video-raw-element");
+        rawvideo.src = location.search.remove(0, 1);
     </script>
 </body>
 </html>
