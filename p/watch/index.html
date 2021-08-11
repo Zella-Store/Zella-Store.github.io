@@ -27,7 +27,6 @@
 
     <div class="VideoPlayerElement">
         <video id="video-raw-element" tabindex="-1" controlslist="nodownload" autoplay style="width: 100%; height: 100%;"
-               src="about:blank"
                onmousemove="Video_MouseMove();"
                ondblclick="FullScreenBtn_Click();"
                onclick="PausePlayBtn_Click();"
@@ -328,7 +327,7 @@
             return (hour > 0) ? (hour.toString() + ":") : "" + min.toString().padStart(2, '0') + ":" + sec.toString().padStart(2, '0')
         }
         rawvideo = document.getElementById("video-raw-element");
-        rawvideo.src = location.search.remove(0, 1);
+        rawvideo.src = location.search.substring(1);
     </script>
 </body>
 </html>
