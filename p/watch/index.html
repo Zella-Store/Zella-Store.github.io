@@ -232,11 +232,17 @@
 
         function FullScreenBtn_Click() {
             var isFullScreen = document.getElementsByClassName("VideoPlayerElement")[0];
-            if (!document.fullscreen) {
+            try {
+            if (!Document.fullscreen) {
                 isFullScreen.requestFullscreen();
             } else if (document.exitFullscreen) {
                 document.exitFullscreen();
             }
+            }
+            catch (ex) {
+            iFullScreen.requestFullscreen();
+            }
+            
             UpdateControls();
         }
         function SettingsBtn_Click() {
