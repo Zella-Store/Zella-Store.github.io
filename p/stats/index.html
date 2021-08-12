@@ -39,7 +39,7 @@
 	</head>
 	<body>
 		<script defer>
-            function CreateRootTree(str, p_) {
+            function CreateRootTree(str, p_, stats_) {
   				var ul_ = document.createElement("UL");
   				p_.appendChild(ul_);
 				
@@ -54,6 +54,7 @@
 				
   				var li_ = document.createElement("LI");
 				li_.classList.add("nested");
+		                li_.innerHTML = "Status: " + stats_;
   				ul_.appendChild(li_);
 				
 				return li_;
