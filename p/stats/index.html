@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ZellaSoft Project Status</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            html, body {
+                font-family: Segoe UI, Segoe UI Midlevel, Segoe WP, Consolas, Arial, Sans-Serif;
+                font-size: 12px;
+            }
+            ul {
+              list-style-type: none;
+            }
+            .caret {
+              cursor: pointer;
+              -webkit-user-select: none; /* Safari 3.1+ */
+              -moz-user-select: none; /* Firefox 2+ */
+              -ms-user-select: none; /* IE 10+ */
+              user-select: none;
+            }
+            .caret::before {
+              content: "\25B6";
+              color: black;
+              display: inline-block;
+              margin-right: 6px;
+            }
+            .caret-down::before {
+              -ms-transform: rotate(90deg); /* IE 9 */
+              -webkit-transform: rotate(90deg); /* Safari */
+              transform: rotate(90deg);  
+            }
+            .nested {
+              display: none;
+            }
+            .active {
+              display: block;
+            }
+		</style>
+	</head>
+	<body>
+		<script defer>
+            function CreateRootTree(str, p_) {
+  				var ul_ = document.createElement("UL");
+  				p_.appendChild(ul_);
+				
+  				var span_ = document.createElement("SPAN");
+				span_.innerText = str;
+				span_.classList.add("caret");
+				span_.addEventListener("click", function() {
+					this.parentElement.children[1].classList.toggle("active");
+					this.classList.toggle("caret-down");
+				});
+  				ul_.appendChild(span_);
+				
+  				var li_ = document.createElement("LI");
+				li_.classList.add("nested");
+  				ul_.appendChild(li_);
+				
+				return li_;
+            }
+      CreateRootTree("Zella Store UWP Client", document.body);
+      CreateRootTree("Zella Store New Server (Backend)", document.body);
+      CreateRootTree("ZAOX Browser", document.body);
+      CreateRootTree("ART UWP Bridge", document.body);
+      CreateRootTree("Placeholder", document.body);
+		</script>
+	</body>
+</html>
