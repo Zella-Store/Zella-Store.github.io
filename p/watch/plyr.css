@@ -47,7 +47,9 @@
 
 
 
-
+video {
+    object-fit: fill;
+}
 
 
 
