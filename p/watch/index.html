@@ -335,7 +335,7 @@
         function ToTimeStamp(value_) {
             var ltime = Math.round(value_);
             var sec = ltime % 60;
-            var min = (ltime - sec) % 60;
+            var min = (ltime - sec) % (60 * 60);
             var hour = (ltime - min - sec);
             return (hour > 0) ? (hour.toString() + ":") : "" + min.toString().padStart(2, '0') + ":" + sec.toString().padStart(2, '0')
         }
