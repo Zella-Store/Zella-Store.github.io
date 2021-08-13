@@ -231,16 +231,23 @@
         var tmi;
 
         function FullScreenBtn_Click() {
-            var isFullScreen = document.getElementsByClassName("VideoPlayerElement")[0];
+            var element = document.getElementsByClassName("VideoPlayerElement")[0];
             try {
-            if (!document.fullscreen) {
-                isFullScreen.requestFullScreen();
-            } else if (document.exitFullScreen) {
-                document.exitFullScreen();
-            }
+                var doc = window.document;
+                var docEl = element;
+
+                var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+                var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+                if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                    requestFullScreen.call(docEl);
+                }
+                else {
+                    cancelFullScreen.call(doc);
+                }
             }
             catch (ex) {
-            iFullScreen.requestFullscreen();
+                alert(ex);
             }
             
             UpdateControls();
