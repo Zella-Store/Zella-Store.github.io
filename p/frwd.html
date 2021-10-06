@@ -31,7 +31,7 @@ if (!(rd.protocol === "http://" | rd.protocol === "https://")) {
     location.replace(rd.protocol + rd.url);
 }
 var fallbacklink = document.getElementById("manualLink");
-fallbacklink.href = rd.protocol + rd.url;
+fallbacklink.href = decodeURI(rd.protocol) + decodeURI(rd.url);
 setTimeout(function(){ window.close(); }, 500);
 </script>
 </body>
