@@ -327,7 +327,7 @@ function initializeClock(id, endtime) {
                       t.seconds;
     if (t.total <= 0) {
       clearInterval(timeinterval);
-      clockdiv.outerHTML = '<a class="dwndBtn fadeIn fourth" onclick="Sideload()">Sideload</a>';
+      clockdiv.outerHTML = '<a class="dwndBtn fadeIn fourth" onclick="return Sideload()">Sideload</a>';
     }
   },1000);
 }
@@ -335,7 +335,13 @@ window.addEventListener('load', function () {
   initializeClock('clockdiv', deadline);
 })
 function Sideload() {
-  location.replace("ms-appinstaller:?source=https://zella-store.github.io/zellaStore.appxbundle");
+  try {
+    location.replace("ms-appinstaller:?source=https://zella-store.github.io/zellaStore.appxbundle");
+  } catch (ex) {
+    alert("Something went wrong, reload the site.");
+    alert(ex);
+  }
+  return false;
 }
     </script>
   </head>
