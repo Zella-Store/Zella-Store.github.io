@@ -327,7 +327,7 @@ function initializeClock(id, endtime) {
                       t.seconds;
     if (t.total <= 0) {
       clearInterval(timeinterval);
-      clockdiv.outerHTML = '<a class="dwndBtn fadeIn fourth" href="https://zella-store.github.io/zellaStore.appxbundle" download="Zella Store (Alpha).appxbundle">Download</a>';
+      clockdiv.outerHTML = '<a class="dwndBtn fadeIn fourth" href="ms-appinstaller:?source=https://zella-store.github.io/zellaStore.appxbundle" download="Zella Store (Alpha).appxbundle">Sideload</a>';
     }
   },1000);
 }
