@@ -18,6 +18,8 @@
     return btn;
   }
   
+  reloadAllow = false;
+  
   ZellaStore = {
   
     "internals":{
@@ -26,7 +28,7 @@
         return eval("(()=>{ return" + sz.toString() + "})();");
       }
       ,
-      "ListResults":function (list) {
+      "ListResults":function (list, container) {
         document.body.innerHTML = "";
         for(let carosel in list) {
           let ttl = document.createElement("H3");
@@ -42,30 +44,34 @@
     },
     "API":{
     
-      "Reload":function () {
-        location.reload();
+      "Reload":function (arg) {
+        if (reloadAllow) {
+          if (arg != undefined && arg != null){
+            console.error(arg);
+          }
+          location.reload();
+        }
       }
       ,
       "PresentJSON":function (json) {
         let rt = ZellaStore.internals.exec(json);
-        ZellaStore.internals.ListResults(rt.groups);
+        ZellaStore.internals.ListResults(rt.groups, document.body);
       }
       ,
       "SearchFor":function (query) {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
+        xhr.open("GET", "/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "devicefamily=" + "pwa.web_only" + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
         xhr.onload = function (e) {
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-            console.log(xhr.responseText);
-            ZellaStore.API.PresentJSON(xhr.responseText);
+              ZellaStore.API.PresentJSON(xhr.responseText);
             } else {
-              console.error(xhr.statusText);
+              ZellaStore.API.Reload(xhr.statusText);
             }
           }
         };
         xhr.onerror = function (e) {
-          //console.error(ZellaStore.API.Reload());
+          ZellaStore.API.Reload(e);
         };
         xhr.send(null);
       }
