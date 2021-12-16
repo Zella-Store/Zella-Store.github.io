@@ -4,6 +4,8 @@
 <title>Zella Store Core</title>
 </head>
 <body>
+  <div id="headerPresenter" style="height:48px;">
+  </div>
   <div id="contentPresenter">
     
   </div>
@@ -20,7 +22,7 @@
       let ot = document.createElement("DIV");
       let ir = document.createElement("DIV");
       ot.appendChild(ir);
-      return { "$type":"Store.W10M.XAML.CaroselElement", "self":ot, "contentPresenter":ir, "appendChild":function (el) { return this.ir.appendChild(el); } };
+      return { "$type":"Store.W10M.XAML.CaroselElement", "self":ot, "contentPresenter":ir, "appendChild":function (el) { return this.contentPresenter.appendChild(el); } };
     }
     
     reloadAllow = false;
