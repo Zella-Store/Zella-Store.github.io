@@ -4,6 +4,9 @@
 <title>Zella Store Core</title>
 </head>
 <body>
+  <div id="contentPresenter">
+    
+  </div>
 <script>
   (()=>{
     
@@ -25,17 +28,17 @@
       "internals":{
       
         "exec":function (sz) {
-          return eval("(()=>{ return" + sz.toString() + "})();");
+          return eval("(()=>{ return " + sz.toString() + "; })();");
         }
         ,
         "ListResults":function (list, container) {
-          document.body.innerHTML = "";
+          container.innerHTML = "";
           for(let carosel in list) {
             let ttl = document.createElement("H3");
             ttl.innerText = list[carosel].category;
-            document.body.appendChild(ttl);
+            container.appendChild(ttl);
             let crsl = Carosel();
-            document.body.appendChild(crsl);
+            container.appendChild(crsl);
             for(let item in list[carosel].searchlist) {
               crsl.appendChild(list[carosel].searchlist[item]);
             }
@@ -55,7 +58,7 @@
         ,
         "PresentJSON":function (json) {
           let rt = ZellaStore.internals.exec(json);
-          ZellaStore.internals.ListResults(rt.groups, document.body);
+          ZellaStore.internals.ListResults(rt.groups, document.getElementById("contentPresenter"));
         }
         ,
         "SearchFor":function (query) {
