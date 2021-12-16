@@ -5,80 +5,82 @@
 </head>
 <body>
 <script>
-//(()=>{
-  
-  function Card(str) {
-    let btn = document.createElement("BUTTON");
-    btn.innerText = str;
-    return btn;
-  }
-  
-  function Carosel() {
-    let btn = document.createElement("DIV");
-    return btn;
-  }
-  
-  reloadAllow = false;
-  
-  ZellaStore = {
-  
-    "internals":{
+  (()=>{
     
-      "exec":function (sz) {
-        return eval("(()=>{ return" + sz.toString() + "})();");
-      }
-      ,
-      "ListResults":function (list, container) {
-        document.body.innerHTML = "";
-        for(let carosel in list) {
-          let ttl = document.createElement("H3");
-          ttl.innerText = list[carosel].category;
-          document.body.appendChild(ttl);
-          let crsl = Carosel();
-          document.body.appendChild(crsl);
-          for(let item in list[carosel].searchlist) {
-            crsl.appendChild(list[carosel].searchlist[item]);
-          }
-        }
-      }
-    },
-    "API":{
+    function Card(str) {
+      let btn = document.createElement("BUTTON");
+      btn.innerText = str;
+      return btn;
+    }
     
-      "Reload":function (arg) {
-        if (reloadAllow) {
-          if (arg != undefined && arg != null){
-            console.error(arg);
-          }
-          location.reload();
+    function Carosel() {
+      let btn = document.createElement("DIV");
+      return btn;
+    }
+    
+    reloadAllow = false;
+    
+    ZellaStore = {
+    
+      "internals":{
+      
+        "exec":function (sz) {
+          return eval("(()=>{ return" + sz.toString() + "})();");
         }
-      }
-      ,
-      "PresentJSON":function (json) {
-        let rt = ZellaStore.internals.exec(json);
-        ZellaStore.internals.ListResults(rt.groups, document.body);
-      }
-      ,
-      "SearchFor":function (query) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "devicefamily=" + "pwa.web_only" + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
-        xhr.onload = function (e) {
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              ZellaStore.API.PresentJSON(xhr.responseText);
-            } else {
-              ZellaStore.API.Reload(xhr.statusText);
+        ,
+        "ListResults":function (list, container) {
+          document.body.innerHTML = "";
+          for(let carosel in list) {
+            let ttl = document.createElement("H3");
+            ttl.innerText = list[carosel].category;
+            document.body.appendChild(ttl);
+            let crsl = Carosel();
+            document.body.appendChild(crsl);
+            for(let item in list[carosel].searchlist) {
+              crsl.appendChild(list[carosel].searchlist[item]);
             }
           }
-        };
-        xhr.onerror = function (e) {
-          ZellaStore.API.Reload(e);
-        };
-        xhr.send(null);
+        }
+      },
+      "API":{
+      
+        "Reload":function (arg) {
+          if (reloadAllow) {
+            if (arg != undefined && arg != null){
+              console.error(arg);
+            }
+            location.reload();
+          }
+        }
+        ,
+        "PresentJSON":function (json) {
+          let rt = ZellaStore.internals.exec(json);
+          ZellaStore.internals.ListResults(rt.groups, document.body);
+        }
+        ,
+        "SearchFor":function (query) {
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", "/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "devicefamily=" + "pwa.web_only" + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
+          xhr.onload = function (e) {
+            if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
+                ZellaStore.API.PresentJSON(xhr.responseText);
+              } else {
+                ZellaStore.API.Reload(xhr.statusText);
+              }
+            }
+          };
+          xhr.onerror = function (e) {
+            ZellaStore.API.Reload(e);
+          };
+          xhr.send(null);
+        }
       }
     }
-  }
+    
+  })();
   
-//})();
+  ZellaStore.API.SearchFor("Test");
 </script>
 </body>
 </html>
