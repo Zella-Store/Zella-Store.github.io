@@ -17,8 +17,10 @@
     }
     
     function Carosel() {
-      let btn = document.createElement("DIV");
-      return btn;
+      let ot = document.createElement("DIV");
+      let ir = document.createElement("DIV");
+      ot.appendChild(ir);
+      return { "$type":"Store.W10M.XAML.CaroselElement", "self":ot, "contentPresenter":ir, "appendChild":function (el) { return this.ir.appendChild(el); } };
     }
     
     reloadAllow = false;
@@ -38,7 +40,7 @@
             ttl.innerText = list[carosel].category;
             container.appendChild(ttl);
             let crsl = Carosel();
-            container.appendChild(crsl);
+            container.appendChild(crsl.self);
             for(let item in list[carosel].searchlist) {
               crsl.appendChild(list[carosel].searchlist[item]);
             }
