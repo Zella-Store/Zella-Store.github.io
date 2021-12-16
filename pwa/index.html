@@ -53,7 +53,7 @@
       ,
       "SearchFor":function (query) {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "http://zellasoft.org/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
+        xhr.open("GET", "/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
         xhr.onload = function (e) {
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
