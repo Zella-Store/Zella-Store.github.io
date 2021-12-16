@@ -44,7 +44,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -88,7 +88,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -132,7 +132,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -176,7 +176,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -220,7 +220,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -264,7 +264,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -308,7 +308,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -352,7 +352,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -396,7 +396,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -440,7 +440,7 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
     {
       "$type":"Store.W10M.XAML.Carosel",
       "category":"Apps",
@@ -484,6 +484,6 @@
         Card("S"),
         Card("T")
       ]
-    }
+    },
   ]
 }
