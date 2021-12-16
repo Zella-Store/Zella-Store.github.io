@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zella Store Core</title>
+</head>
+<body>
+<script>
+//(()=>{
+  
+  function Card(str) {
+    let btn = document.createElement("BUTTON");
+    btn.innerText = str;
+    return btn;
+  }
+  
+  function Carosel() {
+    let btn = document.createElement("DIV");
+    return btn;
+  }
+  
+  ZellaStore = {
+  
+    "internals":{
+    
+      "exec":function (sz) {
+        return eval("(()=>{ return" + sz.toString() + "})();");
+      }
+      ,
+      "ListResults":function (list) {
+        document.body.innerHTML = "";
+        for(let carosel in list) {
+          let crsl = Carosel();
+          document.body.appendChild(crsl);
+          let ttl = document.createElement("H3");
+          ttl.innerText = list[carosel].category;
+          document.body.appendChild(ttl);
+          for(let item in list[carosel].searchlist) {
+            crsl.appendChild(list[carosel].searchlist[item]);
+          }
+        }
+      }
+      ,
+      "test":function () {
+        let rt = ZellaStore.internals.exec(`
+{   
+  "$type":"Store.W10M.Search.SearchResponse",
+  "groups":[
+    {
+      "$type":"Store.W10M.XAML.Carosel",
+      "category":"Apps",
+      "searchlist":[
+        Card("A"),
+        Card("B"),
+        Card("C"),
+        Card("D"),
+        Card("E")
+      ]
+    },
+    {
+      "$type":"Store.W10M.XAML.Carosel",
+      "category":"Games",
+      "searchlist":[
+        Card("F"),
+        Card("G"),
+        Card("H"),
+        Card("I"),
+        Card("J")
+      ]
+    }
+  ]
+}   
+`)  ;
+        ZellaStore.internals.ListResults(rt.groups);
+        return true;
+      }
+    },
+    "API":{
+    
+      "Reload":function () {
+        location.reload();
+      }
+      ,
+      "PresentJSON":function (json) {
+        let rt = ZellaStore.internals.exec(json);
+        ZellaStore.internals.ListResults(rt.groups);
+      }
+      ,
+      "SearchFor":function (query) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://zellasoft.org/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
+        xhr.onload = function (e) {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+            console.log(xhr.responseText);
+            ZellaStore.API.PresentJSON(xhr.responseText);
+            } else {
+              console.error(xhr.statusText);
+            }
+          }
+        };
+        xhr.onerror = function (e) {
+          //console.error(ZellaStore.API.Reload());
+        };
+        xhr.send(null);
+      }
+    }
+  }
+  
+//})();
+</script>
+</body>
+</html>
