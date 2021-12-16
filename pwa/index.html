@@ -39,40 +39,6 @@
           }
         }
       }
-      ,
-      "test":function () {
-        let rt = ZellaStore.internals.exec(`
-{   
-  "$type":"Store.W10M.Search.SearchResponse",
-  "groups":[
-    {
-      "$type":"Store.W10M.XAML.Carosel",
-      "category":"Apps",
-      "searchlist":[
-        Card("A"),
-        Card("B"),
-        Card("C"),
-        Card("D"),
-        Card("E")
-      ]
-    },
-    {
-      "$type":"Store.W10M.XAML.Carosel",
-      "category":"Games",
-      "searchlist":[
-        Card("F"),
-        Card("G"),
-        Card("H"),
-        Card("I"),
-        Card("J")
-      ]
-    }
-  ]
-}   
-`)  ;
-        ZellaStore.internals.ListResults(rt.groups);
-        return true;
-      }
     },
     "API":{
     
