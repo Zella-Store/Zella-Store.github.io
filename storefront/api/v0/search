@@ -22,6 +22,28 @@
         Card("I"),
         Card("J")
       ]
+    },
+    {
+      "$type":"Store.W10M.XAML.Carosel",
+      "category":"Books",
+      "searchlist":[
+        Card("K"),
+        Card("L"),
+        Card("M"),
+        Card("N"),
+        Card("O")
+      ]
+    },
+    {
+      "$type":"Store.W10M.XAML.Carosel",
+      "category":"Music",
+      "searchlist":[
+        Card("P"),
+        Card("Q"),
+        Card("R"),
+        Card("S"),
+        Card("T")
+      ]
     }
   ]
 }
