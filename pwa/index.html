@@ -1,185 +1,304 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href="/pwa/manifest.webmanifest">
-  <title>Zella Store PWA Core</title>
-  <style>
-    body, html {
-      margin: 0px;
-      padding: 0px;
-    }
-    
-    body {
-      margin-top: 48px;
-    }
-    
-    .header-top {
-      background: whitesmoke;
-      width: 100%;
-      height: 48px;
-      top: 0;
-      left: 0;
-      position: fixed;
-      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-    }
-    
-    .AppBar-minimized {
-      background: whitesmoke;
-      width: 100%;
-      height: 20px;
-      text-align: right;
-      left: 0;
-      bottom: 0;
-      position: fixed;
-      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-    }
-    
-    .menuBtn {
-      width: 48px;
-      height: 48px;
-      background: transparent;
-      border: 0px;
-      padding: 0px;
-      margin: 0px;
-    }
-    
-    .AppBarBtn {
-      width: 48px;
-      height: 48px;
-      background: transparent;
-      border: 0px;
-      padding: 0px;
-      margin: 0px;
-    }
-    
-    .menuBtn:hover {
-      background: #00000010;
-    }
-    
-    .menuBtn:active {
-      background: #00000030;
-    }
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/pwa/manifest.webmanifest">
+    <title>Zella Store PWA Core</title>
+    <style>
+
+        body, html {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            margin-top: 48px;
+        }
+
+        .header-top {
+            background: whitesmoke;
+            width: 100%;
+            height: 48px;
+            top: 0;
+            left: 0;
+            position: fixed;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        }
+
+        .AppBar-minimized {
+            background: whitesmoke;
+            width: 100%;
+            height: 20px;
+            text-align: right;
+            left: 0;
+            bottom: 0;
+            position: fixed;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        }
+
+        .menuBtn {
+            width: 48px;
+            height: 48px;
+            background: transparent;
+            border: 0px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .AppBarBtn {
+            width: 48px;
+            height: 48px;
+            background: transparent;
+            border: 0px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .menuBtn:hover {
+            background: #00000010;
+        }
+
+        .menuBtn:active {
+            background: #00000030;
+        }
+    </style>
+    <style>
+        .outer-carosel {
+            padding: 0px;
+            overflow: auto;
+            width: 100%;
+        }
+
+        .inner-carosel {
+            padding: 0px;
+            margin: 0px 9px 6px 9px;
+            display: inline-flex;
+        }
+
+        .outer-card {
+            width: 148px;
+            min-width: 148px;
+            min-height: 182px;
+            box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.133);
+            margin: 3px;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .card-bottom {
+            display: inline-block;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        .app-img {
+            height: 148px;
+            width: 100%;
+            border-radius: 5px 5px 0px 0px;
+            background: lightgray;
+        }
+
+        .AppTitle {
+            padding: 3px 0px 0px 6px;
+        }
+
+        .outer-ratings {
+            padding: 0px 3px;
+            font-size: 12px;
+        }
+
+        .price-label {
+            bottom: 0;
+            left: 0;
+            width: min-content;
+            float: left;
+            padding: 3px 6px;
+        }
+
+        .options-button {
+            bottom: 0;
+            right: 0;
+            width: min-content;
+            float: right;
+            padding: 3px 7px;
+        }
+
+        .rootFrame {
+            margin: 0px;
+        }
+    </style>
 </head>
 <body>
-  <div id="headerPresenter" class="header-top">
-    <button class="menuBtn">
-      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events:none; width:24px; height:24px;">
-        <g>
-          <path d="M21,7 H3 V6 h18 V6 z M21,12 H3 v1 h18 V11 z M21,18 H3 v1 h18 V17 z"/>
-        </g>
-      </svg>
-    </button>
-    <button class="menuBtn">
-      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events:none; width:24px; height:24px;">
-        <g>
-          <path d="M16,4 v4 h4 V4 H16 z M19,7 h-2 V5 h2 V7 z M16,10 v4 h4 v-4 H16 z M19,13 h-2 v-2 h2 V13 z M10,4 v4 h4 V4 H10 z M13,7 h-2 V5 h2 V7 z M10,10 v4 h4 v-4 H10 z M13,13h-2v-2h2V13z M16,16v4h4v-4H16z M19,19h-2v-2h2V19z M10,16v4h4v-4H10z M13,19h-2v-2h2V19z M4,4v4h4V4H4z M7,7H5V5h2V7z M4,10 v4h4v-4H4z M7,13H5v-2h2V13z M4,16v4h4v-4H4z M7,19H5v-2h2V19z"/>
-        </g>
-      </svg>
-    </button>
-  </div>
-  <div id="headerPresenter" class="AppBar-minimized">
-    <button class="menuBtn">
-      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events:none; width:24px; height:24px;">
-        <g>
-          <path d="M21,7 H3 V6 h18 V6 z M21,12 H3 v1 h18 V11 z M21,18 H3 v1 h18 V17 z"></path>
-        </g>
-      </svg>
-    </button>
-    <button class="menuBtn">
-      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events:none; width:24px; height:24px;">
-        <g>
-          <path d="M16,10 v4 h4 v-4 H16 z M10,10 v4 h4 v-4 H10 z M4,10 v4h4v-4H4z"></path>
-        </g>
-      </svg>
-    </button>
-  </div>
-  <div style="height:32px;background:whitesmoke;">
-    Welcome to Zella Store PWA
-  </div>
-  <div id="contentPresenter">
-    
-  </div>
-<script>
-  (()=>{
-    
-    function Card(str) {
-      let btn = document.createElement("BUTTON");
-      btn.innerText = str;
-      return btn;
-    }
-    
-    function Carosel() {
-      let ot = document.createElement("DIV");
-      let ir = document.createElement("DIV");
-      ot.appendChild(ir);
-      return { "$type":"Store.W10M.XAML.CaroselElement", "self":ot, "contentPresenter":ir, "appendChild":function (el) { return this.contentPresenter.appendChild(el); } };
-    }
-    
-    reloadAllow = false;
-    
-    ZellaStore = {
-    
-      "internals":{
-      
-        "exec":function (sz) {
-          return eval("(()=>{ return " + sz.toString() + "; })();");
-        }
-        ,
-        "ListResults":function (list, container) {
-          container.innerHTML = "";
-          for(let carosel in list) {
-            let ttl = document.createElement("H3");
-            ttl.innerText = list[carosel].category;
-            container.appendChild(ttl);
-            let crsl = Carosel();
-            container.appendChild(crsl.self);
-            for(let item in list[carosel].searchlist) {
-              crsl.appendChild(list[carosel].searchlist[item]);
+    <div id="headerPresenter" class="header-top">
+        <button class="menuBtn">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events:none; width:24px; height:24px;">
+                <g>
+                    <path d="M21,7 H3 V6 h18 V6 z M21,12 H3 v1 h18 V11 z M21,18 H3 v1 h18 V17 z" />
+                </g>
+            </svg>
+        </button>
+        <button class="menuBtn">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events:none; width:24px; height:24px;">
+                <g>
+                    <path d="M16,4 v4 h4 V4 H16 z M19,7 h-2 V5 h2 V7 z M16,10 v4 h4 v-4 H16 z M19,13 h-2 v-2 h2 V13 z M10,4 v4 h4 V4 H10 z M13,7 h-2 V5 h2 V7 z M10,10 v4 h4 v-4 H10 z M13,13h-2v-2h2V13z M16,16v4h4v-4H16z M19,19h-2v-2h2V19z M10,16v4h4v-4H10z M13,19h-2v-2h2V19z M4,4v4h4V4H4z M7,7H5V5h2V7z M4,10 v4h4v-4H4z M7,13H5v-2h2V13z M4,16v4h4v-4H4z M7,19H5v-2h2V19z" />
+                </g>
+            </svg>
+        </button>
+    </div>
+    <div id="headerPresenter" class="AppBar-minimized">
+        <button class="menuBtn">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events:none; width:24px; height:24px;">
+                <g>
+                    <path d="M21,7 H3 V6 h18 V6 z M21,12 H3 v1 h18 V11 z M21,18 H3 v1 h18 V17 z"></path>
+                </g>
+            </svg>
+        </button>
+        <button class="menuBtn">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events:none; width:24px; height:24px;">
+                <g>
+                    <path d="M16,10 v4 h4 v-4 H16 z M10,10 v4 h4 v-4 H10 z M4,10 v4h4v-4H4z"></path>
+                </g>
+            </svg>
+        </button>
+    </div>
+    <div style="height:32px;background:whitesmoke;">
+        Welcome to Zella Store PWA
+    </div>
+    <div id="contentPresenter">
+
+    </div>
+    <script>
+        (() => {
+
+            function Card(title, image, price, ratingratio, ratingcount) {
+                let oc = document.createElement("DIV");
+                let ig = document.createElement("IMG");
+                let at = document.createElement("DIV");
+                let or = document.createElement("DIV");
+                let dt = document.createElement("DIV");
+                let ap = document.createElement("DIV");
+                let mo = document.createElement("DIV");
+
+                oc.classList.add("outer-card");
+                ig.classList.add("app-img");
+                at.classList.add("AppTitle");
+                or.classList.add("outer-ratings");
+                dt.classList.add("card-bottom");
+                ap.classList.add("price-label");
+                mo.classList.add("options-button");
+
+                try {
+                    at.innerText = title;
+                    ig.src = image;
+                    or.innerText = "••••• " + ((ratingcount === 0) ? "no ratings" : ratingcount);
+                    ap.innerText = ((price === 0) ? "Free" : price);
+                    mo.innerText = "•••";
+                } catch (ex) { }
+
+                oc.appendChild(ig);
+                oc.appendChild(at);
+                oc.appendChild(or);
+                dt.appendChild(ap);
+                dt.appendChild(mo);
+                oc.appendChild(dt);
+                return oc;
             }
-          }
-        }
-      },
-      "API":{
-      
-        "Reload":function (arg) {
-          if (reloadAllow) {
-            if (arg != undefined && arg != null){
-              console.error(arg);
+
+            function Carosel(strCategory) {
+                let vot = document.createElement("DIV");
+                let cot = document.createElement("DIV");
+                let hlb = document.createElement("H3");
+                let ot = document.createElement("DIV");
+                let ir = document.createElement("DIV");
+
+                ot.classList.add("outer-carosel");
+                ir.classList.add("inner-carosel");
+
+                hlb.innerText = strCategory;
+
+                ot.appendChild(ir);
+                cot.appendChild(hlb);
+                vot.appendChild(cot);
+                vot.appendChild(ot);
+
+                return { "$type": "Store.W10M.XAML.CaroselElement", "self": vot, "contentPresenter": ir, "appendChild": function (el) { return this.contentPresenter.appendChild(el); } };
+
+
+                /*
+                 
+                <div>
+                  <div><h3>Category Name:</h3></div>
+                  <div class="outer-carosel">
+                    <div class="inner-carosel">
+
+                    </div>
+                  </div>
+                </div>
+                 
+                 
+                 */
             }
-            location.reload();
-          }
-        }
-        ,
-        "PresentJSON":function (json) {
-          let rt = ZellaStore.internals.exec(json);
-          ZellaStore.internals.ListResults(rt.groups, document.getElementById("contentPresenter"));
-        }
-        ,
-        "SearchFor":function (query) {
-          var xhr = new XMLHttpRequest();
-          xhr.open("GET", "/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "devicefamily=" + "pwa.web_only" + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
-          xhr.onload = function (e) {
-            if (xhr.readyState === 4) {
-              if (xhr.status === 200) {
-                ZellaStore.API.PresentJSON(xhr.responseText);
-              } else {
-                ZellaStore.API.Reload(xhr.statusText);
-              }
+
+            reloadAllow = false;
+
+            ZellaStore = {
+
+                "internals": {
+
+                    "exec": function (sz) {
+                        return eval("(()=>{ return " + sz.toString() + "; })();");
+                    }
+                    ,
+                    "ListResults": function (list, container) {
+                        container.innerHTML = "";
+                        for (let carosel in list) {
+                            let crsl = Carosel(list[carosel].category);
+                            container.appendChild(crsl.self);
+                            for (let item in list[carosel].searchlist) {
+                                crsl.appendChild(list[carosel].searchlist[item]);
+                            }
+                        }
+                    }
+                },
+                "API": {
+
+                    "Reload": function (arg) {
+                        if (reloadAllow) {
+                            if (arg != undefined && arg != null) {
+                                console.error(arg);
+                            }
+                            location.reload();
+                        }
+                    }
+                    ,
+                    "PresentJSON": function (json) {
+                        let rt = ZellaStore.internals.exec(json);
+                        ZellaStore.internals.ListResults(rt.groups, document.getElementById("contentPresenter"));
+                    }
+                    ,
+                    "SearchFor": function (query) {
+                        var xhr = new XMLHttpRequest();
+                        xhr.open("GET", "/storefront/api/v0/search?q=" + encodeURI(query) + "&" + "devicefamily=" + "pwa.web_only" + "&" + "sid=" + 0 + "&" + "lid=" + 0, true);
+                        xhr.onload = function (e) {
+                            if (xhr.readyState === 4) {
+                                if (xhr.status === 200) {
+                                    ZellaStore.API.PresentJSON(xhr.responseText);
+                                } else {
+                                    ZellaStore.API.Reload(xhr.statusText);
+                                }
+                            }
+                        };
+                        xhr.onerror = function (e) {
+                            ZellaStore.API.Reload(e);
+                        };
+                        xhr.send(null);
+                    }
+                }
             }
-          };
-          xhr.onerror = function (e) {
-            ZellaStore.API.Reload(e);
-          };
-          xhr.send(null);
-        }
-      }
-    }
-    
-  })();
-  
-  ZellaStore.API.SearchFor("Test");
-</script>
+
+        })();
+
+        ZellaStore.API.SearchFor("Test");
+    </script>
 </body>
 </html>
