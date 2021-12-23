@@ -1,0 +1,41 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Password Generator</title>
+</head>
+<body>
+<script>
+(() => {
+GenInfo = {
+    "length":"12",
+    "split":"5",
+    "seperator":"",
+    "genchars":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+};
+
+try {
+    let splts = document.location.search.substring(1).split("&");
+    for (var query in splts) {
+        let key = splts[query].split("=")[0];
+        let val = splts[query].substring(key.length + 1);
+        GenInfo[key.toLowerCase()] = val;
+    }
+} catch (ex) {
+    alert(ex);
+}
+
+function KeyGen(f) {
+    var rt = "";
+    for(var i = 0; i < f.length; i++) {
+        rt += f.genchars[Math.round(Math.random() * (f.genchars.length - 1))];
+        if ((i + 1) % f.split == 0 && i != f.length - 1) {
+            rt += f.seperator;
+        }
+    }
+    return rt;
+}
+document.body.innerText = (KeyGen(GenInfo));
+})();
+</script>
+</body>
+</html>
