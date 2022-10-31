@@ -1,0 +1,147 @@
+{
+  "$type": "Zella_Store.AdaptiveFrame",
+  "ver": "1.0",
+  "requestURL": "/storefront/api/v0/homepage",
+  "requestParameters": "?Currency=en-US&Language=en-US&DeviceFamily=Any&Platform=Universal.Windows&Arch=Any&OSVersion=10.0.22000.1&PackageFamilyName=ZellaSoft.Store.Alpha&PublisherId=ra5qqg1zzkb2e&version=1.0.0.0",
+  "requestHash": "#null",
+  "Content": [
+    {
+      "$type": "Zella_Store.Carousel",
+      "Title": "New",
+      "SeeAll": "/storefront/api/v0/newapps",
+      "Children": [
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "156672135",
+          "Title": "No game no Life",
+          "Icon": "/storefront/db/156672135/img.png",
+          "Color": "#00000000",
+          "RatingScore": 4.5,
+          "RatingCount": 1,
+          "Price": 0.0,
+          "Top": false,
+          "New": false
+        },
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "647829785",
+          "Title": "ZAOX Browser",
+          "Icon": "/storefront/db/647829785/img.png",
+          "Color": "#00000000",
+          "RatingScore": 5.0,
+          "RatingCount": 256,
+          "Price": 0.0,
+          "Top": false,
+          "New": false
+        },
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "864569320",
+          "Title": "Mozilla Firefox",
+          "Icon": "/storefront/db/864569320/img.png",
+          "Color": "#00000000",
+          "RatingScore": 1.0,
+          "RatingCount": 1,
+          "Price": 1.99,
+          "Top": false,
+          "New": false
+        },
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "834758754",
+          "Title": "File Explorer",
+          "Icon": "/storefront/db/834758754/img.png",
+          "Color": "#00000000",
+          "RatingScore": 1.0,
+          "RatingCount": 1,
+          "Price": 0.0,
+          "Top": true,
+          "New": false
+        },
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "467529666",
+          "Title": "MyAnimeList",
+          "Icon": "/storefront/db/467529666/img.png",
+          "Color": "#00000000",
+          "RatingScore": 1.0,
+          "RatingCount": 1,
+          "Price": 0.0,
+          "Top": false,
+          "New": true
+        }
+      ]
+    },
+    {
+      "$type": "Zella_Store.Carousel",
+      "Title": "Top",
+      "SeeAll": "/storefront/api/v0/topapps",
+      "Children": [
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "156672135",
+          "Title": "No game no Life",
+          "Icon": "/storefront/db/156672135/img.png",
+          "Color": "#00000000",
+          "RatingScore": 4.5,
+          "RatingCount": 1,
+          "Price": 0.0,
+          "Top": false,
+          "New": false
+        },
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "647829785",
+          "Title": "ZAOX Browser",
+          "Icon": "/storefront/db/647829785/img.png",
+          "Color": "#00000000",
+          "RatingScore": 5.0,
+          "RatingCount": 256,
+          "Price": 0.0,
+          "Top": false,
+          "New": false
+        },
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "864569320",
+          "Title": "Mozilla Firefox",
+          "Icon": "/storefront/db/864569320/img.png",
+          "Color": "#00000000",
+          "RatingScore": 1.0,
+          "RatingCount": 1,
+          "Price": 1.99,
+          "Top": false,
+          "New": false
+        },
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "834758754",
+          "Title": "File Explorer",
+          "Icon": "/storefront/db/834758754/img.png",
+          "Color": "#00000000",
+          "RatingScore": 1.0,
+          "RatingCount": 1,
+          "Price": 0.0,
+          "Top": true,
+          "New": false
+        },
+        {
+          "$type": "Zella_Store.VerticalCard",
+          "ID": "467529666",
+          "Title": "MyAnimeList",
+          "Icon": "/storefront/db/467529666/img.png",
+          "Color": "#00000000",
+          "RatingScore": 1.0,
+          "RatingCount": 1,
+          "Price": 0.0,
+          "Top": false,
+          "New": true
+        }
+      ]
+    }
+  ],
+  "Updates": {
+    "IDs": [ "156672135" ],
+    "Count": 1
+  }
+}
