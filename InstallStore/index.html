@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html style="--scroll-top: 0px; --scroll-bottom: 0px;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Download Zella Store (fallback server)</title>
+    <meta name="title" content="Zella Store">
+    <meta name="description" content="Zella Store is a mobile and desktop app store with focus on cross plaform.">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-title" content="Zella Store PWA">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Zella Store">
+    <meta name="application-name" content="Zella Store PWA">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="./browserconfig.xml">
+    <meta name="theme-color" content="#212121">
+    <meta name="google" content="notranslate">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zella-store.github.io/">
+    <meta property="og:title" content="Zella Store Download (alpha)">
+    <meta property="og:description" content="Zella Store is a mobile and desktop app store with focus on cross plaform.">
+    <meta property="og:image" content="./icon-192x192.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zella-store.github.io/">
+    <meta property="twitter:title" content="Zella Store Download (alpha)">
+    <meta property="twitter:description" content="Zella Store is a mobile and desktop app store with focus on cross plaform.">
+    <meta property="twitter:image" content="./ZellaStore.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./ZellaStore.png">
+    <link rel="icon" href="https://zella-store.github.io/ZellaStore.svg" type="image/svg+xml">
+    <link rel="manifest" href="./site.webmanifest">
+    <script type="text/javascript" src="/zellasoft.js"></script>
+
+    <style type="text/css">
+        html, body {
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-size: 16px;
+            font-family: "Segoe UI";
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+        }
+
+        html {
+            background-color: #FAFAFA;
+            height: 100%;
+        }
+
+        button {
+            border-width: 0px;
+            color: white;
+            background-color: #0087ca;
+            padding: 5px 6px;
+            border-radius: 5px;
+        }
+
+        .selectable {
+            -webkit-touch-callout: initial;
+            -webkit-user-select: initial;
+            -moz-user-select: initial;
+            -ms-user-select: initial;
+            user-select: text;
+            cursor: text;
+        }
+
+        .picture {
+            width: 200px;
+            height: 200px;
+            /*
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            */
+        }
+
+        .shadow {
+            -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .bordered-shadow {
+            -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        navbar {
+            background-color: white;
+            border: 0px;
+            padding: 0px;
+            margin: 0px;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            height: 48px;
+            overflow: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            scrollbar-width: thin;
+        }
+
+            navbar span {
+                margin-left: 12px;
+                margin-right: 12px;
+                cursor: pointer;
+            }
+
+        .docked-btn {
+            background-color: #489BC6;
+            color: #ffffff;
+            border: 0px;
+            padding: 0px;
+            margin: 0px;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            height: 66px;
+            width: 100%;
+            border-radius: 0px;
+        }
+
+        .docked-btn:hover {
+            background-color: #56baed;
+            color: #ffffff;
+        }
+
+        .docked-btn:active {
+            background-color: #2F6581;
+            color: #ffffff;
+        }
+
+        .docked-btn svg {
+            display: inline-block;
+            vertical-align: middle;
+            width: 16px;
+            height: 16px;
+        }
+
+        .docked-btn span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 16px;
+            font-family: "Segoe UI Light";
+        }
+
+        .content-view {
+            overflow: auto;
+            position: absolute;
+            top: 48px;
+            left: 0px;
+            right: 0px;
+            bottom: 66px;
+        }
+
+        .smooth {
+            /*scroll-behavior: smooth;*/
+        }
+
+        center {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        center div * {
+            display: flex;
+        }
+
+        .sub-block * {
+            display: block;
+        }
+
+        .sub-tabs {
+            padding: 9px;
+            border-radius: 8px;
+        }
+
+            .sub-tabs * {
+                display: inline;
+                margin: 0px 9px;
+            }
+
+            .sub-tabs span {
+                display: inline-block;
+                position: relative;
+                color: #0087ca;
+                cursor: pointer;
+            }
+
+                .sub-tabs span:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #0087ca;
+                    transform-origin: bottom center;
+                    transition: transform 0.125s ease-out;
+                }
+
+                .sub-tabs span:hover:after, .sub-tabs span:active:after {
+                    transform: scaleX(1);
+                }
+
+                .sub-tabs span:hover {
+                    color: black;
+                }
+
+        blocks {
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+
+        .background {
+            /*background: url(null);*/
+        }
+
+        #ProductDisplayName {
+            color: dimgray;
+            font-size: 22px;
+            font-family: 'Segoe UI Semibold';
+            margin: 12px 6px;
+            padding: 0px 6px;
+        }
+        #ProductDisplayName * {
+            display: inline;
+        }
+        .marker {
+            color: #222222;
+            backdrop-filter: blur(12px);
+        }
+        .yellow {
+            background-color: rgba(255,255,0,0.6);
+        }
+        .green {
+            background-color: rgba(48,255,0,0.6);
+        }
+        .red {
+            background-color: rgba(255,0,0,0.6);
+        }
+
+        .hidden {
+            display: none;
+            visibility: collapse;
+        }
+
+        .content-box {
+            text-align: justify;
+            max-width: 450px;
+            background-color: white;
+            margin: 6px 12px;
+            border-radius: 6px;
+        }
+            .content-box span {
+                margin: 6px 12px;
+            }
+
+        .chin {
+            margin: 0px;
+            display: inline-block;
+            width: 100%;
+        }
+            .chin:before {
+                display: block;
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: rgba(0,0,0,0.1);
+                margin: 0 0 3px 0
+            }
+            .chin div {
+                margin: 3px;
+                text-align: right;
+            }
+                .chin div button {
+                    margin: 3px;
+                    display: inline-block;
+                }
+    </style>
+</head>
+<body>
+    <div class="content-view background">
+
+    </div>
+    <div id="primary-view" class="content-view smooth">
+        <center id="filler-page" class="sub-block">
+            <div class="bordered-shadow sub-tabs" style="background-color: white; margin: 12px 0 24px 0;">
+                <span onclick="return ZellaSoft.View.Navigate('/InstallStore')">Release</span>
+                <span onclick="return ZellaSoft.View.Navigate('/InstallStore/Preview')">Preview</span>
+                <span onclick="return ZellaSoft.View.Navigate('/InstallStore/Beta')">Beta</span>
+                <span onclick="return ZellaSoft.View.Navigate('/InstallStore/Alpha')">Alpha</span>
+            </div>
+            <img src="ZellaStore.png" class="picture">
+            <span id="ProductDisplayName">Zella Store</span>
+            <span style="color: red;">Sharing or reupload of the raw installation file is prohibited.</span>
+            <span style="color: red;">Share this site instead.</span>
+        </center>
+        <center id="troubleshooter">
+            <h2 class="selectable">It didn't work?</h2>
+            <span class="selectable">Here is some things you may try:</span>
+            <div class="content-box bordered-shadow">
+                <span>Make sure to enable sideloading on your device. On some devices this means turning on developer mode.</span>
+                <div class="chin">
+                    <div>
+                        <button class="bordered-shadow" onclick="return ZellaSoft.DeveloperSettings()">Open Developer Settings</button>
+                        <button class="bordered-shadow" onclick="return App.Guide('dev-mode')">Full Guide</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-box bordered-shadow">
+                <span>You must install our certificate. This will make your device trust ZellaSoft signed packages, i.e. packages distributed through Zella Store.</span>
+                <div class="chin">
+                    <div>
+                        <button class="bordered-shadow" onclick="return App.DownloadCA()">Install Certificate</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-box bordered-shadow">
+                <span>Make sure to have the &quot;App Installer&quot; app on your device.</span>
+                <div class="chin">
+                    <div>
+                        <button class="bordered-shadow" onclick="return App.DownloadVCLib140UWPDesktop()">1. VCLib140 UWP Desktop</button>
+                        <button class="bordered-shadow" onclick="return App.DownloadVCLib140()">2. VCLib140</button>
+                        <button class="bordered-shadow" onclick="return App.DownloadMAI()">3. Modern App Installer</button>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+    <navbar class="shadow">
+        <div style="height: 48px;">
+            <span style="vertical-align: middle; font-family: 'Segoe UI Semibold'; line-height: 48px;" onclick="return ZellaSoft.View.Navigate('/')">ZellaSoft</span>
+            <svg focusable="false" style="vertical-align: middle; height: 8px; width: 5px;" viewBox="0 0 5 8"><path style="fill: #111111;" d="M 1 0 L 5 4 L 1 8 L 0 8 L 4 4 L 0 0 Z"></path></svg>
+            <span style="vertical-align: middle; font-family: 'Segoe UI'; line-height: 48px;" onclick="return App.Guide()">Guides</span>
+            <svg focusable="false" style="vertical-align: middle; height: 8px; width: 5px;" viewBox="0 0 5 8"><path style="fill: #111111;" d="M 1 0 L 5 4 L 1 8 L 0 8 L 4 4 L 0 0 Z"></path></svg>
+            <span style="vertical-align: middle; font-family: 'Segoe UI'; line-height: 48px;" onclick="return true">Install Zella Store</span>
+        </div>
+    </navbar>
+    <button class="docked-btn shadow" onclick="return App.SideloadAsUWP()" focusable="true">
+        <svg focusable="false" viewBox="0 0 16 16"><path style="fill: #FFFFFF;" d="M 3.2071 10.7929 A 0.5 0.5 0 0 1 4 10.0858 L 7 13.0858 L 7 0.5 A 0.5 0.5 0 0 1 8 0.5 L 8 13.0858 L 11 10.0858 A 0.5 0.5 0 0 1 11.7071 10.7929 L 8 14.5 A 0.75 0.75 0 0 1 7 14.5 Z M 12.5 15 A 0.5 0.5 0 0 1 12.5 16 L 2.5 16 A 0.5 0.5 0 0 1 2.5 15 Z"></path></svg>
+        <span focusable="false">Sideload</span>
+    </button>
+</body>
+</html>
