@@ -1,0 +1,21 @@
+[zellaStore appmatrix v0.1]
+title=              Interop Tools                                                 //application title
+author=             IT Dev Team                                                   //author
+price=              0.00                                                          //price
+publiclyVisible=    true                                                          //public
+security=           threat                                                        //security
+containsAd=         false                                                         //contains ads
+inAppPurchase=      false                                                         //contains in-app purchase
+minOSversion=       10.0.0.0                                                      //minimum OS build
+maxFeatureSet=      10.0.0.0                                                      //max tested on OS build
+hasLumiaOptima=     no                                                            //no if not
+categoryTags=       development, tool, system, management, app, uwp, continuum    //required to categorize apps
+tilePNG=            StoreTile.png                                                 //app start menu tile
+coverPNG=                                                                         //app (2:3) cover
+discCoverPNG=                                                                     //app (disc) cover
+backgroundPNG=      StoreBackground.png                                           //store background
+[Dependencies]
+
+[Packages]
+Legacy=M52346ITDevTeam.InteropToolsLegacy_2.1.21.0_feeqnmc1868va.appxbundle?2.1.21.0
+Legacy=M52346ITDevTeam.InteropToolsLegacy_2.1.21.0_feeqnmc1868va.appxbundle?2.1.21.0
