@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic DNS Updater</title>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
+    <link rel="stylesheet" href="style.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="DynDNS Tool">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    <form>
+        <label for="domain">Domain:</label>
+        <select id="domain" name="domain"></select>
+
+        <label for="ddnsCredential">DDNS Credential:</label>
+        <select id="ddnsCredential" name="ddnsCredential" disabled></select>
+
+        <label for="subdomain">Subdomain:</label>
+        <input type="text" id="subdomain" name="subdomain">
+
+        <label for="ip">IP Address:</label>
+        <input type="text" id="ip" name="ip">
+
+        <button type="button" onclick="UpdateARecord()">Update Record</button>
+    </form>
+
+    <script>
+
+        // Load credentials and domain from cookies
+        window.onload = function () {
+
+            const domains = getCookieList("domains");
+            const ddnsCredentials = getCookieList("ddnsCredentials");
+
+            if (domains.length > 0 && ddnsCredentials.length > 0) {
+                const domainSelect = document.getElementById("domain");
+                const ddnsCredentialSelect = document.getElementById("ddnsCredential");
+
+                domains.forEach(domain => {
+                    const option = document.createElement("option");
+                    option.text = domain;
+                    domainSelect.add(option);
+                });
+
+                ddnsCredentials.forEach(ddnsCredential => {
+                    const option = document.createElement("option");
+                    option.text = ddnsCredential;
+                    ddnsCredentialSelect.add(option);
+                });
+
+                // Automatically select the correct key for the domain
+                domainSelect.addEventListener("change", function () {
+                    const index = domains.indexOf(this.value);
+                    if (index !== -1) {
+                        ddnsCredentialSelect.selectedIndex = index;
+                    }
+                });
+            }
+        };
+
+        function UpdateARecord() {
+            const subdomain = document.getElementById("subdomain").value;
+            const domain = document.getElementById("domain").value;
+            const ddnsCredential = document.getElementById("ddnsCredential").value;
+            const ip = document.getElementById("ip").value;
+
+            const url = `https://dynamicdns.park-your-domain.com/update?host=${subdomain}&domain=${domain}&password=${ddnsCredential}&ip=${ip}`;
+            window.location.href = url;
+
+            // Save credentials and domain to cookies
+            document.cookie = `subdomain=${subdomain}`;
+        }
+
+        function getCookieList(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return JSON.parse(parts.pop().split(';').shift());
+            return [];
+        }
+    </script>
+</body>
+</html>
