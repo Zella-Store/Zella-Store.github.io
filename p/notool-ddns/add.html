@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic DNS Updater</title>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <form>
+        <label for="domain">Domain:</label>
+        <input type="text" id="domain" name="domain">
+
+        <label for="ddnsCredential">DDNS Credential:</label>
+        <input type="text" id="ddnsCredential" name="ddnsCredential">
+
+        <button type="button" onclick="SaveCredentials()">Save Credentials</button>
+    </form>
+
+    <script>
+        function SaveCredentials() {
+            const domain = document.getElementById("domain").value;
+            const ddnsCredential = document.getElementById("ddnsCredential").value;
+
+            // Save credentials to cookies
+            const domains = getCookieList("domains");
+            const ddnsCredentials = getCookieList("ddnsCredentials");
+
+            domains.push(domain);
+            ddnsCredentials.push(ddnsCredential);
+
+            document.cookie = `domains=${JSON.stringify(domains)}`;
+            document.cookie = `ddnsCredentials=${JSON.stringify(ddnsCredentials)}`;
+
+            alert("Credentials saved successfully!");
+        }
+
+        function getCookieList(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return JSON.parse(parts.pop().split(';').shift());
+            return [];
+        }
+    </script>
+</body>
+</html>
