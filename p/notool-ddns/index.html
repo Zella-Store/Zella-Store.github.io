@@ -30,6 +30,9 @@
 
         // Load credentials and domain from cookies
         window.onload = function () {
+            let _date = new Date();
+            _date.setFullYear(_date.getFullYear() + 1);
+            let _expires = _date.toUTCString();
 
             const domains = getCookieList("domains");
             const ddnsCredentials = getCookieList("ddnsCredentials");
